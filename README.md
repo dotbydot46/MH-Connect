@@ -1,11 +1,12 @@
-MH Connect Repair Page V2.2 Button Polish
+MH Connect Accessories Page V2 Premium
 
 Upload these files to GitHub:
-- phone-repairs.html
-- repair.css
+- accessories.html
+- accessories.css
 
-Changes:
-- Premium WhatsApp buttons.
-- Floating WhatsApp changed from bright green block to premium compact dark/green-gold style.
-- Better repair hero CTA buttons.
-- Mobile WhatsApp button becomes a clean round icon.
+This version creates a premium accessories page with:
+- Blended CSS hero visual, no boxed picture.
+- Categories: cases, screen protectors, chargers/cables, audio, power banks, everyday extras.
+- Popular items section.
+- WhatsApp availability form.
+- AI-ready data attributes for future CRM/stock automation.
