@@ -550,3 +550,282 @@
     margin-inline: auto;
   }
 }
+
+
+/* =========================================================
+   REPAIR PAGE V2.1 — realistic hero balance polish
+   Makes the repair visual less oversized, brighter and more
+   natural inside the website instead of too dark/heavy.
+   ========================================================= */
+
+.repair-hero-realistic {
+  min-height: 610px !important;
+  padding-top: clamp(76px, 5.5vw, 108px) !important;
+  padding-bottom: 70px !important;
+}
+
+.repair-hero-realistic .page-hero-grid {
+  grid-template-columns: minmax(0, .92fr) minmax(420px, .78fr) !important;
+  gap: clamp(34px, 5vw, 82px) !important;
+}
+
+.repair-hero-realistic h1 {
+  font-size: clamp(3.25rem, 6.9vw, 6.35rem) !important;
+  line-height: .94 !important;
+  max-width: 760px !important;
+}
+
+.repair-hero-realistic .hero-title-sub {
+  font-size: clamp(1.8rem, 3vw, 2.65rem) !important;
+  line-height: 1.18 !important;
+  max-width: 680px !important;
+}
+
+.repair-hero-realistic .hero-text {
+  max-width: 700px !important;
+  font-size: 1.08rem !important;
+}
+
+/* The whole visual now sits cleaner in the hero */
+.realistic-repair-visual {
+  min-height: 500px !important;
+  transform: translateY(-8px) scale(.92);
+  transform-origin: center;
+}
+
+/* More premium glow, less empty darkness */
+.realistic-repair-visual::before {
+  width: min(96%, 610px) !important;
+  height: 78% !important;
+  background:
+    radial-gradient(circle at 52% 34%, rgba(240,210,138,.28), transparent 31%),
+    radial-gradient(circle at 36% 82%, rgba(212,166,74,.18), transparent 30%),
+    radial-gradient(circle at 73% 66%, rgba(245,241,232,.10), transparent 24%) !important;
+  filter: blur(14px) !important;
+}
+
+.realistic-repair-visual::after {
+  inset: 56% 2% 9% !important;
+  opacity: .74 !important;
+}
+
+.repair-workbench {
+  left: 8% !important;
+  right: 6% !important;
+  bottom: 72px !important;
+  height: 92px !important;
+  opacity: .92 !important;
+}
+
+/* Phone is now more realistic and less massive */
+.repair-device {
+  width: min(62vw, 232px) !important;
+  height: 372px !important;
+  border-radius: 38px !important;
+  transform: rotate(-6deg) translateY(-14px) !important;
+  box-shadow:
+    inset 0 0 0 6px rgba(255,255,255,.025),
+    inset 0 0 0 10px rgba(0,0,0,.68),
+    0 38px 76px rgba(0,0,0,.58),
+    0 0 78px rgba(212,166,74,.13) !important;
+}
+
+.device-screen-glass {
+  inset: 24px 17px !important;
+  border-radius: 29px !important;
+  background:
+    linear-gradient(140deg, rgba(240,210,138,.20), transparent 23%),
+    linear-gradient(330deg, rgba(245,241,232,.12), transparent 34%),
+    radial-gradient(circle at 42% 26%, rgba(70,78,88,.54), transparent 22%),
+    #040506 !important;
+}
+
+.device-earpiece {
+  top: 15px !important;
+  width: 76px !important;
+}
+
+.screen-reflection {
+  inset: 42px 38px 140px 36px !important;
+  opacity: .72 !important;
+}
+
+/* Crack is sharper but still elegant */
+.screen-crack-lines {
+  height: 130px !important;
+  left: 57% !important;
+  top: 116px !important;
+  opacity: .9;
+}
+
+.screen-crack-lines::before {
+  height: 72px !important;
+}
+
+.screen-crack-lines::after {
+  height: 58px !important;
+}
+
+/* Floating spare screen now looks like a component, not a giant shape */
+.floating-display {
+  right: 8% !important;
+  top: 112px !important;
+  width: 132px !important;
+  height: 224px !important;
+  opacity: .64 !important;
+  transform: rotate(14deg) perspective(600px) rotateY(-24deg) !important;
+}
+
+.display-glass {
+  background:
+    linear-gradient(135deg, rgba(240,210,138,.12), transparent 28%),
+    linear-gradient(320deg, rgba(245,241,232,.055), transparent 34%),
+    rgba(7,9,12,.54) !important;
+}
+
+.display-ribbon {
+  width: 48px !important;
+  height: 42px !important;
+  bottom: -34px !important;
+  opacity: .8 !important;
+}
+
+/* Tools moved away from the phone to feel like a real workbench */
+.precision-tool {
+  height: 15px !important;
+}
+
+.tool-one {
+  left: 8% !important;
+  bottom: 118px !important;
+  width: 192px !important;
+  transform: rotate(22deg) !important;
+}
+
+.tool-two {
+  right: 10% !important;
+  bottom: 105px !important;
+  width: 142px !important;
+  transform: rotate(-18deg) !important;
+  opacity: .58 !important;
+}
+
+.repair-pick {
+  width: 68px !important;
+  height: 68px !important;
+  left: 18% !important;
+  top: 174px !important;
+  opacity: .58 !important;
+  filter: blur(.1px);
+}
+
+/* Floating labels are cleaner and less dominant */
+.repair-chip {
+  min-width: 142px !important;
+  padding: 13px 15px !important;
+  background: rgba(8,10,13,.62) !important;
+  border-color: rgba(212,166,74,.32) !important;
+}
+
+.repair-chip.left {
+  left: 6% !important;
+  top: 58px !important;
+}
+
+.repair-chip.right {
+  right: 3% !important;
+  bottom: 104px !important;
+}
+
+@keyframes repairRealFloat {
+  0%, 100% {
+    transform: rotate(-6deg) translateY(-14px);
+  }
+  50% {
+    transform: rotate(-4.8deg) translateY(-25px);
+  }
+}
+
+@media (max-width: 1160px) {
+  .repair-hero-realistic {
+    padding-top: 72px !important;
+  }
+
+  .realistic-repair-visual {
+    min-height: 430px !important;
+    transform: translateY(0) scale(.94);
+  }
+
+  .repair-hero-realistic h1 {
+    font-size: clamp(3.05rem, 8vw, 5rem) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .repair-hero-realistic {
+    padding-top: 54px !important;
+    padding-bottom: 42px !important;
+  }
+
+  .repair-hero-realistic h1 {
+    font-size: clamp(2.55rem, 13vw, 3.85rem) !important;
+  }
+
+  .repair-hero-realistic .hero-title-sub {
+    font-size: clamp(1.45rem, 7vw, 2rem) !important;
+  }
+
+  .realistic-repair-visual {
+    min-height: 338px !important;
+    transform: scale(.88);
+    margin-top: -8px;
+  }
+
+  .repair-device {
+    width: 188px !important;
+    height: 300px !important;
+    border-radius: 32px !important;
+  }
+
+  .floating-display {
+    width: 96px !important;
+    height: 166px !important;
+    right: 4% !important;
+    top: 92px !important;
+  }
+
+  .repair-pick {
+    width: 50px !important;
+    height: 50px !important;
+    left: 12% !important;
+    top: 132px !important;
+  }
+
+  .repair-chip {
+    min-width: 118px !important;
+    padding: 10px 11px !important;
+    font-size: .82rem !important;
+  }
+
+  .repair-chip.left {
+    left: 2px !important;
+    top: 22px !important;
+  }
+
+  .repair-chip.right {
+    right: 2px !important;
+    bottom: 54px !important;
+  }
+
+  .tool-one {
+    left: -8px !important;
+    bottom: 72px !important;
+    width: 142px !important;
+  }
+
+  .tool-two {
+    right: -8px !important;
+    bottom: 76px !important;
+    width: 112px !important;
+  }
+}

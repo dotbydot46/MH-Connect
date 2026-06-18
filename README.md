@@ -1,8 +1,11 @@
-MH Connect Phone Repairs V2 Realistic
+MH Connect Phone Repairs V2.1 Polished
 
 Upload these files to GitHub:
 - phone-repairs.html
 - repair.css
 
-This version keeps the premium custom repair visual but makes it more realistic and more integrated into the page.
-It does not change the Home page or other pages.
+Changes:
+- Repair visual is smaller, brighter and more realistic.
+- Phone and display component are better balanced.
+- Tools and labels feel more like a real repair workbench.
+- Hero title spacing is improved.
