@@ -769,3 +769,122 @@ button.next-card { width: 100%; border-style: solid; font: inherit; cursor: poin
   .home-visual-chip { display: none; }
   .home-hero-final .home-trust-row span { width: 100%; justify-content: center; }
 }
+
+
+/* =========================================================
+   HOME V4.1 — text label and hero spacing fix
+   Fixes the old "Tech Print Care" text and prevents hero
+   title sitting too close under the navbar.
+   ========================================================= */
+.home-hero-final {
+  padding-top: clamp(132px, 9vw, 170px) !important;
+  padding-bottom: 86px !important;
+}
+
+.home-hero-final h1 {
+  font-size: clamp(3.7rem, 7.55vw, 6.9rem) !important;
+  line-height: .96 !important;
+}
+
+.home-integrated-visual {
+  padding-bottom: 58px;
+}
+
+.home-visual-labels {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 5%;
+  width: min(92%, 680px);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+
+.home-visual-labels span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(240,210,138,.34);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(7,9,12,.64);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 18px 42px rgba(0,0,0,.36),
+    inset 0 0 0 1px rgba(245,241,232,.035);
+  font-weight: 900;
+  letter-spacing: .015em;
+}
+
+.home-visual-labels span:nth-child(1),
+.home-visual-labels span:nth-child(3) {
+  color: var(--gold-light);
+}
+
+.home-visual-labels i[data-icon] {
+  width: 17px !important;
+  height: 17px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--gold-light) !important;
+  box-shadow: none !important;
+}
+
+/* Keep old chip styles harmless if any browser cache still has them */
+.home-visual-chip {
+  display: none !important;
+}
+
+@media (max-width: 1160px) {
+  .home-hero-final {
+    padding-top: 110px !important;
+  }
+
+  .home-integrated-visual {
+    padding-bottom: 52px;
+  }
+
+  .home-visual-labels {
+    bottom: 2%;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-hero-final {
+    padding-top: 72px !important;
+  }
+
+  .home-hero-final h1 {
+    font-size: clamp(2.85rem, 13vw, 4.15rem) !important;
+    line-height: .98 !important;
+  }
+
+  .home-integrated-visual {
+    padding-bottom: 12px;
+  }
+
+  .home-visual-labels {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    margin-top: -4px;
+    gap: 8px;
+  }
+
+  .home-visual-labels span {
+    min-height: 36px;
+    padding: 8px 11px;
+    font-size: .86rem;
+  }
+}
