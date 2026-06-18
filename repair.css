@@ -829,3 +829,219 @@
     width: 112px !important;
   }
 }
+
+
+/* =========================================================
+   REPAIR PAGE V2.2 — WhatsApp and CTA button polish
+   Makes the WhatsApp buttons feel premium, consistent and
+   less like a default green floating button.
+   ========================================================= */
+
+.repair-hero-realistic .hero-actions {
+  gap: 14px !important;
+  align-items: center !important;
+}
+
+.repair-hero-realistic .hero-actions .btn {
+  min-height: 58px;
+  padding: 15px 24px !important;
+  border-radius: 14px !important;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  box-shadow: 0 20px 46px rgba(0,0,0,.30);
+}
+
+.repair-hero-realistic .hero-actions .btn i[data-icon],
+.launch-actions .btn i[data-icon],
+.enquiry-panel .btn i[data-icon] {
+  width: 19px !important;
+  height: 19px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Start enquiry button: warmer premium gold, better contrast */
+.repair-hero-realistic .hero-actions .btn-gold,
+.enquiry-panel .btn-gold,
+.launch-panel .btn-gold {
+  position: relative;
+  overflow: hidden;
+  color: #08090b !important;
+  background:
+    linear-gradient(135deg, #f6d77c 0%, #d4a64a 46%, #a8741f 100%) !important;
+  border: 1px solid rgba(255,227,156,.72) !important;
+  text-shadow: none !important;
+}
+
+.repair-hero-realistic .hero-actions .btn-gold::before,
+.enquiry-panel .btn-gold::before,
+.launch-panel .btn-gold::before {
+  content: "";
+  position: absolute;
+  inset: -40% -20%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.34), transparent);
+  transform: translateX(-120%) rotate(12deg);
+  transition: transform .65s ease;
+  pointer-events: none;
+}
+
+.repair-hero-realistic .hero-actions .btn-gold:hover::before,
+.enquiry-panel .btn-gold:hover::before,
+.launch-panel .btn-gold:hover::before {
+  transform: translateX(120%) rotate(12deg);
+}
+
+/* WhatsApp hero button: premium dark button with a WhatsApp accent */
+.repair-hero-realistic .hero-actions .btn-outline[href*="wa.me"],
+.launch-actions .btn-gold[href*="wa.me"],
+.launch-actions .btn-outline[href*="wa.me"] {
+  color: var(--cream) !important;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(37,211,102,.20), transparent 32%),
+    linear-gradient(135deg, rgba(18,22,25,.98), rgba(7,9,12,.98)) !important;
+  border: 1px solid rgba(37,211,102,.46) !important;
+  box-shadow:
+    0 20px 48px rgba(0,0,0,.34),
+    0 0 0 1px rgba(212,166,74,.10) inset !important;
+}
+
+.repair-hero-realistic .hero-actions .btn-outline[href*="wa.me"] i[data-icon],
+.launch-actions .btn[href*="wa.me"] i[data-icon] {
+  color: #25D366 !important;
+  filter: drop-shadow(0 0 8px rgba(37,211,102,.30));
+}
+
+.repair-hero-realistic .hero-actions .btn-outline[href*="wa.me"]:hover,
+.launch-actions .btn[href*="wa.me"]:hover {
+  border-color: rgba(37,211,102,.72) !important;
+  transform: translateY(-3px);
+  box-shadow:
+    0 24px 56px rgba(0,0,0,.42),
+    0 0 28px rgba(37,211,102,.14) !important;
+}
+
+/* Repair form WhatsApp submit button */
+.enquiry-panel .btn.full {
+  width: 100%;
+  justify-content: center;
+  min-height: 56px;
+  border-radius: 14px !important;
+}
+
+/* Floating WhatsApp on repair page: no bright green block, premium compact pill */
+body:has(.repair-hero-realistic) .floating-wa {
+  right: 24px !important;
+  bottom: 24px !important;
+  width: auto !important;
+  min-width: 164px;
+  height: 58px !important;
+  padding: 0 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  color: var(--cream) !important;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(37,211,102,.26), transparent 34%),
+    linear-gradient(135deg, rgba(14,17,20,.96), rgba(7,9,12,.98)) !important;
+  border: 1px solid rgba(37,211,102,.48) !important;
+  border-radius: 999px !important;
+  box-shadow:
+    0 22px 54px rgba(0,0,0,.46),
+    0 0 0 1px rgba(212,166,74,.10) inset,
+    0 0 28px rgba(37,211,102,.10) !important;
+  font-weight: 900 !important;
+  letter-spacing: .01em;
+  transform: none !important;
+}
+
+body:has(.repair-hero-realistic) .floating-wa i[data-icon] {
+  width: 20px !important;
+  height: 20px !important;
+  color: #25D366 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 8px rgba(37,211,102,.30));
+}
+
+body:has(.repair-hero-realistic) .floating-wa:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(37,211,102,.72) !important;
+  box-shadow:
+    0 28px 68px rgba(0,0,0,.52),
+    0 0 36px rgba(37,211,102,.16) !important;
+}
+
+/* Bottom CTA panel buttons */
+.launch-panel .launch-actions .btn {
+  min-height: 56px;
+  border-radius: 14px !important;
+  padding: 14px 22px !important;
+}
+
+/* Repair cards: small polish so CTA text feels more premium */
+.repair-service-grid .next-card span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding-top: 6px;
+  border-top: 1px solid rgba(212,166,74,.14);
+}
+
+/* Fallback for browsers without :has support: style the floating button on all pages, still premium */
+@supports not selector(body:has(.repair-hero-realistic)) {
+  .floating-wa {
+    right: 24px !important;
+    bottom: 24px !important;
+    width: auto !important;
+    min-width: 164px;
+    height: 58px !important;
+    padding: 0 20px !important;
+    border-radius: 999px !important;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(37,211,102,.26), transparent 34%),
+      linear-gradient(135deg, rgba(14,17,20,.96), rgba(7,9,12,.98)) !important;
+    border: 1px solid rgba(37,211,102,.48) !important;
+    color: var(--cream) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .repair-hero-realistic .hero-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 11px !important;
+  }
+
+  .repair-hero-realistic .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 54px;
+  }
+
+  body:has(.repair-hero-realistic) .floating-wa {
+    right: 18px !important;
+    bottom: 18px !important;
+    min-width: 58px !important;
+    width: 58px !important;
+    height: 58px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    font-size: 0 !important;
+  }
+
+  body:has(.repair-hero-realistic) .floating-wa i[data-icon] {
+    width: 23px !important;
+    height: 23px !important;
+  }
+
+  .launch-panel .launch-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
