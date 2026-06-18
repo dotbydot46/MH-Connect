@@ -14,7 +14,7 @@
   <link rel="icon" href="assets/photos/mh-emblem.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="pages.css" />
-  
+  <link rel="stylesheet" href="repair.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -47,49 +47,104 @@
       </div>
     </nav>
   </header>
-  <main id="main">
 
-    <section class="page-hero" aria-labelledby="repairs-title">
+  <main id="main">
+    <section class="page-hero repair-hero" aria-labelledby="repairs-title">
       <div class="container page-hero-grid">
         <div class="page-hero-copy reveal">
-          <p class="eyebrow">Phone repairs</p>
-          <h1 id="repairs-title">Repair Enquiries <span>Made Simple</span></h1>
-          <p class="hero-text">Tell us your phone model and issue. We check availability, explain options and guide you before any work begins.</p>
+          <p class="eyebrow">MH Connect repairs</p>
+          <h1 id="repairs-title">Repair. Replace. <span>Restore.</span></h1>
+          <p class="hero-title-sub">Clear phone repair enquiries in Croydon.</p>
+          <p class="hero-text">Tell us your phone model and the issue. We check the best option, part availability, repair time and warranty before any work begins.</p>
           <div class="hero-actions compact">
             <a class="btn btn-gold" href="#repair-form"><i data-icon="tools"></i>Start Repair Enquiry</a>
             <a class="btn btn-outline" href="https://wa.me/447398770915?text=Hi%20MH%20Connect%2C%20I%20would%20like%20to%20ask%20about%20a%20phone%20repair." target="_blank" rel="noopener"><i data-icon="whatsapp"></i>WhatsApp Us</a>
           </div>
+          <div class="repair-trust-strip" aria-label="Repair benefits">
+            <span><i data-icon="shield"></i>Clear advice first</span>
+            <span><i data-icon="clock"></i>Same-day where possible</span>
+            <span><i data-icon="store"></i>Walk-ins welcome</span>
+          </div>
         </div>
-        <figure class="wide-photo reveal delay-1"><img src="assets/photos/phone-repair-showcase.jpg" alt="Professional phone repair workspace" loading="lazy"></figure>
+
+        <div class="repair-visual reveal delay-1" aria-label="Premium repair visual">
+          <div class="repair-chip left"><strong>Diagnosis</strong><small>Model + issue check</small></div>
+          <div class="repair-phone"><span class="crack-lines" aria-hidden="true"></span></div>
+          <span class="repair-tool one" aria-hidden="true"></span>
+          <span class="repair-tool two" aria-hidden="true"></span>
+          <div class="repair-chip right"><strong>Options</strong><small>Price • Time • Warranty</small></div>
+        </div>
       </div>
     </section>
 
     <section class="section compact-section" aria-labelledby="repair-types">
       <div class="container section-head centered reveal">
-        <p class="eyebrow">Common enquiries</p>
-        <h2 id="repair-types">What We Can <span>Check</span></h2>
+        <p class="eyebrow">Common repair enquiries</p>
+        <h2 id="repair-types">Choose the Issue, <span>We’ll Guide You</span></h2>
+        <p>Tap a repair type to fill the enquiry form faster.</p>
       </div>
-      <div class="container next-grid six-grid">
-        <button class="next-card repair-select reveal" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Screen replacement enquiry"><i data-icon="crack"></i><h3>Screen Replacement</h3><p>Cracked, black, ghost-touch or unresponsive screens.</p></button>
-        <button class="next-card repair-select reveal delay-1" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Battery replacement enquiry"><i data-icon="battery"></i><h3>Battery Replacement</h3><p>Battery draining quickly, swelling or shutting down.</p></button>
-        <button class="next-card repair-select reveal delay-2" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Charging port repair enquiry"><i data-icon="plug"></i><h3>Charging Port</h3><p>Loose connection, not charging or cable not fitting.</p></button>
-        <button class="next-card repair-select reveal" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Speaker or microphone enquiry"><i data-icon="speaker"></i><h3>Speaker / Mic</h3><p>Low sound, no sound or microphone problems.</p></button>
-        <button class="next-card repair-select reveal delay-1" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Back glass repair enquiry"><i data-icon="phone"></i><h3>Back Glass</h3><p>Cracked or damaged back glass checks.</p></button>
-        <button class="next-card repair-select reveal delay-2" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Diagnostic enquiry"><i data-icon="info"></i><h3>Diagnostics</h3><p>Not sure what is wrong? Bring it in or message us.</p></button>
+      <div class="container next-grid repair-service-grid">
+        <button class="next-card repair-select reveal" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Screen replacement enquiry"><i data-icon="crack"></i><h3>Screen Replacement</h3><p>Cracked glass, black display, ghost touch or unresponsive screen.</p><span>Ask for screen quote →</span></button>
+        <button class="next-card repair-select reveal delay-1" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Battery replacement enquiry"><i data-icon="battery"></i><h3>Battery Replacement</h3><p>Fast draining, swelling, overheating or shutting down.</p><span>Ask for battery quote →</span></button>
+        <button class="next-card repair-select reveal delay-2" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Charging port repair enquiry"><i data-icon="plug"></i><h3>Charging Port</h3><p>Not charging, loose cable, dust, water or connection problems.</p><span>Check charging issue →</span></button>
+        <button class="next-card repair-select reveal" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Speaker or microphone enquiry"><i data-icon="speaker"></i><h3>Speaker / Mic</h3><p>No sound, low sound, caller cannot hear you, or muffled audio.</p><span>Ask for audio check →</span></button>
+        <button class="next-card repair-select reveal delay-1" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Back glass or housing enquiry"><i data-icon="phone"></i><h3>Back Glass / Housing</h3><p>Cracked back, damaged frame or cosmetic repair checks.</p><span>Ask availability →</span></button>
+        <button class="next-card repair-select reveal delay-2" type="button" data-fill-form="#repair-form" data-field="issue" data-value="Diagnostic enquiry"><i data-icon="info"></i><h3>Diagnostics</h3><p>Not sure what is wrong? Message us or bring the device in.</p><span>Start diagnosis →</span></button>
+      </div>
+      <div class="container repair-card-note reveal">
+        <strong>Note:</strong> repair price and time can change depending on model, part quality and current stock. We explain everything before you decide.
       </div>
     </section>
 
-    <section class="section split-section" aria-labelledby="process-title">
+    <section class="section split-section" aria-labelledby="screen-options">
+      <div class="container">
+        <div class="section-head centered reveal">
+          <p class="eyebrow">Screen replacement options</p>
+          <h2 id="screen-options">Clear Choices, <span>No Confusion</span></h2>
+          <p>For screen repairs, customers may have different quality options depending on the model and available parts.</p>
+        </div>
+        <div class="repair-options">
+          <article class="option-card reveal">
+            <h3>Standard Option</h3>
+            <p>A practical option when the customer wants a working screen at a lower cost.</p>
+            <ul><li>Good for budget repairs</li><li>Availability depends on model</li><li>Warranty explained before repair</li></ul>
+          </article>
+          <article class="option-card reveal delay-1">
+            <h3>Premium Option</h3>
+            <p>A better quality screen option where colour, touch and brightness matter more.</p>
+            <ul><li>Better display feel</li><li>Recommended for daily-use phones</li><li>Price confirmed before repair</li></ul>
+          </article>
+          <article class="option-card reveal delay-2">
+            <h3>Best Available</h3>
+            <p>For customers who want the closest available quality for their device.</p>
+            <ul><li>Subject to stock</li><li>Best advice given honestly</li><li>Clear aftercare guidance</li></ul>
+          </article>
+        </div>
+        <div class="repair-warning reveal">
+          <i data-icon="shield"></i>
+          <p><strong>Warranty promise:</strong><span>Warranty depends on the repair type and part used. Physical damage, liquid damage and new accidental damage are normally not covered. We explain this clearly before repair.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section repair-form-section" aria-labelledby="process-title">
       <div class="container two-col reverse-mobile">
         <div class="section-copy reveal">
           <p class="eyebrow">Repair process</p>
           <h2 id="process-title">How It <span>Works</span></h2>
           <div class="process-steps">
-            <div><b>1</b><span><strong>Send model &amp; issue</strong><small>Tell us the phone model and what happened.</small></span></div>
-            <div><b>2</b><span><strong>We check options</strong><small>We check part availability, quality and likely time.</small></span></div>
-            <div><b>3</b><span><strong>You decide</strong><small>We explain price, time and warranty before repair.</small></span></div>
+            <div><b>1</b><span><strong>Send model & issue</strong><small>Tell us the phone model and what happened. A photo helps.</small></span></div>
+            <div><b>2</b><span><strong>We check options</strong><small>We check possible repair options, part availability and likely time.</small></span></div>
+            <div><b>3</b><span><strong>You decide</strong><small>We explain price, quality and warranty before repair begins.</small></span></div>
+          </div>
+          <div class="repair-mini-grid">
+            <div><strong>Bring your passcode?</strong><span>Only when needed for testing, and only with your permission.</span></div>
+            <div><strong>Back up first</strong><span>For important data, back up your phone before repair where possible.</span></div>
+            <div><strong>Testing after repair</strong><span>We check touch, charging, sound and main functions where relevant.</span></div>
+            <div><strong>Aftercare advice</strong><span>We explain how to protect the repair after collection.</span></div>
           </div>
         </div>
+
         <form class="enquiry-panel reveal delay-1" id="repair-form" data-whatsapp-form data-form-title="Phone repair enquiry">
           <h3>Send a Repair Enquiry</h3>
           <p>Fill this in and it will open WhatsApp with your repair details.</p>
@@ -103,10 +158,10 @@
             <option value="Battery replacement enquiry">Battery replacement enquiry</option>
             <option value="Charging port repair enquiry">Charging port repair enquiry</option>
             <option value="Speaker or microphone enquiry">Speaker or microphone enquiry</option>
-            <option value="Back glass repair enquiry">Back glass repair enquiry</option>
+            <option value="Back glass or housing enquiry">Back glass or housing enquiry</option>
             <option value="Diagnostic enquiry">Diagnostic enquiry</option>
           </select></label>
-          <label>What issue are you facing?*<textarea name="message" rows="5" placeholder="e.g. Cracked screen, battery draining, not charging, etc." required></textarea></label>
+          <label>What issue are you facing?*<textarea name="message" rows="5" placeholder="e.g. Cracked screen, battery draining, not charging, no sound, etc." required></textarea></label>
           <button class="btn btn-gold full" type="submit"><i data-icon="whatsapp"></i>Send Enquiry on WhatsApp</button>
           <small><i data-icon="lock"></i>Your details are used only to respond to your enquiry.</small>
         </form>
@@ -115,16 +170,36 @@
 
     <section class="section compact-section" aria-labelledby="repair-faq">
       <div class="container faq-grid">
-        <div class="section-copy reveal"><p class="eyebrow">Repair promise</p><h2 id="repair-faq">Clear Advice Before <span>Repair</span></h2><p>Prices and repair times depend on model and part availability. We always explain options first.</p></div>
+        <div class="section-copy reveal">
+          <p class="eyebrow">Useful answers</p>
+          <h2 id="repair-faq">Before You <span>Visit</span></h2>
+          <p>These quick answers help customers understand the repair journey before they come to the shop.</p>
+        </div>
         <div class="faq-list reveal delay-1">
-          <details open><summary>Do I need an appointment?</summary><p>No, walk-ins are welcome, but WhatsApp first is best if you want a quick quote.</p></details>
-          <details><summary>Do repairs come with warranty?</summary><p>Warranty depends on the part and repair type. We explain the warranty before repair.</p></details>
-          <details><summary>Can I send a photo?</summary><p>Yes. Send a clear photo on WhatsApp so we can understand the issue better.</p></details>
+          <details open><summary>Do I need an appointment?</summary><p>No. Walk-ins are welcome, but WhatsApp first is best if you want a quick quote or to check part availability.</p></details>
+          <details><summary>How long does a repair take?</summary><p>It depends on the model, issue and part stock. Some repairs may be same-day where possible.</p></details>
+          <details><summary>Do repairs come with warranty?</summary><p>Warranty depends on repair type and part used. We explain the warranty before any repair starts.</p></details>
+          <details><summary>Can I send a photo?</summary><p>Yes. A clear photo on WhatsApp helps us understand cracked screen, back glass, charging port or visible damage.</p></details>
+          <details><summary>Do you repair iPhone and Samsung?</summary><p>Yes, we handle enquiries for popular iPhone, Samsung and Android models, depending on parts and repair type.</p></details>
         </div>
       </div>
     </section>
 
+    <section class="section compact-section" aria-labelledby="repair-cta">
+      <div class="container launch-panel reveal">
+        <div>
+          <p class="eyebrow">Ready when you are</p>
+          <h2 id="repair-cta">Send the Model. We’ll Check the Rest.</h2>
+          <p>Message MH Connect with your phone model, issue and a photo if possible.</p>
+        </div>
+        <div class="launch-actions">
+          <a class="btn btn-gold" href="https://wa.me/447398770915?text=Hi%20MH%20Connect%2C%20I%20would%20like%20to%20ask%20about%20a%20phone%20repair.%0A%0APhone%20model%3A%0AIssue%3A%0APhoto%20available%3A" target="_blank" rel="noopener"><i data-icon="whatsapp"></i>WhatsApp Repair Enquiry</a>
+          <a class="btn btn-outline" href="contact.html"><i data-icon="pin"></i>Visit Shop</a>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer" id="footer">
     <div class="container footer-grid footer-grid-clean">
       <section class="footer-brand-card" aria-label="MH Connect summary">
