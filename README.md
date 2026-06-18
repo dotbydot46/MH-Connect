@@ -1,10 +1,8 @@
-MH Connect Homepage V4.1 Text Fix
+MH Connect Phone Repairs V2 Realistic
 
 Upload these files to GitHub:
-- index.html
-- pages.css
-- assets/photos/home-hero-showcase.png
+- phone-repairs.html
+- repair.css
 
-Changes:
-- Improved the hero visual labels from 'Tech Print Care' to 'Repair • Protect • Print • Care'.
-- Added spacing so the big hero title does not sit too close under the navbar.
+This version keeps the premium custom repair visual but makes it more realistic and more integrated into the page.
+It does not change the Home page or other pages.
