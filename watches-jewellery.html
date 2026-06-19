@@ -10,10 +10,11 @@
   <meta property="og:description" content="Watch batteries, watch straps, bracelet adjustment, jewellery cleaning, jewellery polishing and clasp checks at MH Connect in Croydon." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="MH Connect" />
-  <meta property="og:image" content="assets/photos/hero-showcase-card.jpg" />
+  <meta property="og:image" content="assets/photos/watches-jewellery-hero-integrated.png" />
   <link rel="icon" href="assets/photos/mh-emblem.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="watches-jewellery.css" />
   
 </head>
 <body>
@@ -49,32 +50,145 @@
   </header>
   <main id="main">
 
-    <section class="page-hero" aria-labelledby="watch-title">
+    <section class="page-hero watch-hero" aria-labelledby="watch-title">
       <div class="container page-hero-grid">
         <div class="page-hero-copy reveal">
-          <p class="eyebrow">Watches &amp; jewellery care</p>
-          <h1 id="watch-title">Careful Support For <span>Precious Items</span></h1>
-          <p class="hero-text">Watch batteries, straps, bracelet adjustments, jewellery cleaning, polishing and clasp checks — handled with care.</p>
-          <div class="hero-actions compact"><a class="btn btn-gold" href="https://wa.me/447398770915?text=Hi%20MH%20Connect%2C%20I%20would%20like%20to%20ask%20about%20watch%20or%20jewellery%20care." target="_blank" rel="noopener"><i data-icon="whatsapp"></i>Enquire on WhatsApp</a><a class="btn btn-outline" href="contact.html"><i data-icon="store"></i>Visit Shop</a></div>
+          <p class="eyebrow">MH Connect watches &amp; jewellery</p>
+          <h1 id="watch-title">Care. Adjust. <span>Shine.</span></h1>
+          <p class="hero-title-sub">Careful watch and jewellery support in Croydon.</p>
+          <p class="hero-text">Watch batteries, straps, bracelet adjustments, jewellery cleaning, polishing and clasp checks — handled with care, honesty and clear advice.</p>
+          <div class="hero-actions compact">
+            <a class="btn btn-gold" href="https://wa.me/447398770915?text=Hi%20MH%20Connect%2C%20I%20would%20like%20to%20ask%20about%20watch%20or%20jewellery%20care.%0A%0AItem%3A%0AService%20needed%3A" target="_blank" rel="noopener"><i data-icon="whatsapp"></i>Ask on WhatsApp</a>
+            <a class="btn btn-outline" href="#watch-services"><i data-icon="diamond"></i>View Services</a>
+          </div>
+          <div class="watch-trust-strip" aria-label="Watch and jewellery service benefits">
+            <span><i data-icon="shield"></i>Careful checks first</span>
+            <span><i data-icon="watch"></i>Watches &amp; straps</span>
+            <span><i data-icon="sparkle"></i>Cleaning &amp; shine</span>
+          </div>
         </div>
-        <figure class="wide-photo reveal delay-1"><img src="assets/photos/jewellery-polish-showcase.jpg" alt="Jewellery care and polishing display" loading="lazy"></figure>
+
+        <figure class="watch-hero-photo reveal delay-1">
+          <img src="assets/photos/watches-jewellery-hero-integrated.png" alt="Premium blended watch and jewellery display for MH Connect" loading="eager">
+          <figcaption class="watch-photo-pills" aria-label="Watch and jewellery highlights">
+            <span><i data-icon="watch"></i> Watches</span>
+            <span><i data-icon="diamond"></i> Jewellery</span>
+            <span><i data-icon="sparkle"></i> Polish</span>
+            <span><i data-icon="link"></i> Clasps</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section compact-section" aria-labelledby="care-title">
-      <div class="container section-head centered reveal"><p class="eyebrow">Services</p><h2 id="care-title">Watch &amp; Jewellery <span>Care</span></h2></div>
-      <div class="container jewellery-services page-jewellery-grid">
-        <article class="jewellery-service reveal"><img src="assets/photos/watch-batteries-showcase.jpg" alt="Watch batteries" loading="lazy"><div><i data-icon="battery"></i><h3>Watch Batteries</h3><p>Battery replacement enquiries in store.</p></div></article>
-        <article class="jewellery-service reveal delay-1"><img src="assets/photos/watch-straps-showcase.jpg" alt="Watch straps" loading="lazy"><div><i data-icon="watch"></i><h3>Watch Straps</h3><p>Straps and basic fitting support.</p></div></article>
-        <article class="jewellery-service reveal delay-2"><img src="assets/photos/bracelet-adjustment-showcase.jpg" alt="Bracelet adjustment" loading="lazy"><div><i data-icon="resize"></i><h3>Bracelet Adjustment</h3><p>Simple adjustment support.</p></div></article>
-        <article class="jewellery-service reveal"><img src="assets/photos/jewellery-care-showcase.jpg" alt="Jewellery cleaning" loading="lazy"><div><i data-icon="sparkle"></i><h3>Jewellery Cleaning</h3><p>Bring back shine with careful cleaning guidance.</p></div></article>
-        <article class="jewellery-service reveal delay-1"><img src="assets/photos/jewellery-polish-showcase.jpg" alt="Jewellery polishing" loading="lazy"><div><i data-icon="star"></i><h3>Jewellery Polishing</h3><p>Polish to make items look newer.</p></div></article>
-        <article class="jewellery-service reveal delay-2"><img src="assets/photos/clasp-repair-showcase.jpg" alt="Clasp repair" loading="lazy"><div><i data-icon="link"></i><h3>Clasp Repair</h3><p>Broken or loose clasp? We can check it.</p></div></article>
+    <section class="section compact-section" id="watch-services" aria-labelledby="care-title">
+      <div class="container section-head centered reveal">
+        <p class="eyebrow">Services</p>
+        <h2 id="care-title">Watch &amp; Jewellery <span>Care</span></h2>
+        <p>Clean, simple services with clear advice before we do anything.</p>
+      </div>
+
+      <div class="container jewellery-services page-jewellery-grid watch-service-grid">
+        <article class="jewellery-service reveal" data-service="watches-jewellery" data-category="watch-batteries"><img src="assets/photos/watch-batteries-showcase.jpg" alt="Watch batteries" loading="lazy"><div><i data-icon="battery"></i><h3>Watch Batteries</h3><p>Battery replacement enquiries in store.</p></div></article>
+        <article class="jewellery-service reveal delay-1" data-service="watches-jewellery" data-category="watch-straps"><img src="assets/photos/watch-straps-showcase.jpg" alt="Watch straps" loading="lazy"><div><i data-icon="watch"></i><h3>Watch Straps</h3><p>Straps and basic fitting support.</p></div></article>
+        <article class="jewellery-service reveal delay-2" data-service="watches-jewellery" data-category="bracelet-adjustment"><img src="assets/photos/bracelet-adjustment-showcase.jpg" alt="Bracelet adjustment" loading="lazy"><div><i data-icon="resize"></i><h3>Bracelet Adjustment</h3><p>Simple adjustment support.</p></div></article>
+        <article class="jewellery-service reveal" data-service="watches-jewellery" data-category="jewellery-cleaning"><img src="assets/photos/jewellery-care-showcase.jpg" alt="Jewellery cleaning" loading="lazy"><div><i data-icon="sparkle"></i><h3>Jewellery Cleaning</h3><p>Bring back shine with careful cleaning guidance.</p></div></article>
+        <article class="jewellery-service reveal delay-1" data-service="watches-jewellery" data-category="jewellery-polishing"><img src="assets/photos/jewellery-polish-showcase.jpg" alt="Jewellery polishing" loading="lazy"><div><i data-icon="star"></i><h3>Jewellery Polishing</h3><p>Polish to make items look newer.</p></div></article>
+        <article class="jewellery-service reveal delay-2" data-service="watches-jewellery" data-category="clasp-check"><img src="assets/photos/clasp-repair-showcase.jpg" alt="Clasp repair" loading="lazy"><div><i data-icon="link"></i><h3>Clasp Checks</h3><p>Broken or loose clasp? We can check it.</p></div></article>
       </div>
     </section>
 
-    <section class="section compact-section" aria-labelledby="care-note">
-      <div class="container launch-panel reveal"><div><p class="eyebrow">Care note</p><h2 id="care-note">Bring It In For A Check</h2><p>Some watch and jewellery work depends on the item condition. We will check and explain the safest option first.</p></div><div class="launch-actions"><a class="btn btn-gold" href="https://wa.me/447398770915?text=Hi%20MH%20Connect%2C%20can%20you%20check%20my%20watch%20or%20jewellery%20item%3F" target="_blank" rel="noopener"><i data-icon="whatsapp"></i>Ask First</a></div></div>
+    <section class="section split-section" aria-labelledby="care-process-title">
+      <div class="container two-col">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Care process</p>
+          <h2 id="care-process-title">Handled With <span>Respect</span></h2>
+          <p>Some watch and jewellery work depends on the item condition. We check first, explain the safest option, then you decide.</p>
+          <div class="process-steps">
+            <div><b>1</b><span><strong>Bring or send a photo</strong><small>Show us the item and what needs checking.</small></span></div>
+            <div><b>2</b><span><strong>We inspect carefully</strong><small>We check condition, fitting, clasp, battery or polishing need.</small></span></div>
+            <div><b>3</b><span><strong>You get clear advice</strong><small>We explain what is possible before any work starts.</small></span></div>
+          </div>
+        </div>
+
+        <div class="watch-note-card reveal delay-1">
+          <i data-icon="shield"></i>
+          <h3>Care promise</h3>
+          <p>We treat small personal items with care. If a piece needs specialist work, we will tell you honestly instead of forcing the service.</p>
+          <a class="btn btn-gold full" href="https://wa.me/447398770915?text=Hi%20MH%20Connect%2C%20can%20you%20check%20my%20watch%20or%20jewellery%20item%3F%0A%0AItem%3A%0AIssue%3A" target="_blank" rel="noopener"><i data-icon="whatsapp"></i>Ask First</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section watch-enquiry-section" aria-labelledby="watch-enquiry-title">
+      <div class="container two-col reverse-mobile">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Quick enquiry</p>
+          <h2 id="watch-enquiry-title">Send Details <span>Before Visiting</span></h2>
+          <p>For faster help, send a quick WhatsApp message with what you need. A clear photo is useful for jewellery or clasp checks.</p>
+          <div class="clean-list">
+            <div><i data-icon="watch"></i><strong>Watch support</strong><span>Battery, strap or fitting enquiry.</span></div>
+            <div><i data-icon="diamond"></i><strong>Jewellery care</strong><span>Cleaning, polishing, bracelet adjustment or clasp check.</span></div>
+            <div><i data-icon="info"></i><strong>Clear answer</strong><span>We explain availability and next step before you visit.</span></div>
+          </div>
+        </div>
+
+        <form class="enquiry-panel reveal delay-1" id="watch-form" data-whatsapp-form data-form-title="Watch and jewellery care enquiry">
+          <h3>Watch & Jewellery Enquiry</h3>
+          <p>Fill this in and it will open WhatsApp with your request.</p>
+          <div class="form-row">
+            <label>Your Name*<input type="text" name="name" placeholder="e.g. Ali Khan" required></label>
+            <label>Phone Number*<input type="tel" name="phone" placeholder="e.g. 07398 770915" required></label>
+          </div>
+          <label>Item type<select name="item" required>
+            <option value="Watch enquiry">Watch enquiry</option>
+            <option value="Bracelet enquiry">Bracelet enquiry</option>
+            <option value="Ring enquiry">Ring enquiry</option>
+            <option value="Chain or necklace enquiry">Chain or necklace enquiry</option>
+            <option value="Other jewellery enquiry">Other jewellery enquiry</option>
+          </select></label>
+          <label>Service needed<select name="service" required>
+            <option value="Watch battery enquiry">Watch battery enquiry</option>
+            <option value="Watch strap enquiry">Watch strap enquiry</option>
+            <option value="Bracelet adjustment enquiry">Bracelet adjustment enquiry</option>
+            <option value="Jewellery cleaning enquiry">Jewellery cleaning enquiry</option>
+            <option value="Jewellery polishing enquiry">Jewellery polishing enquiry</option>
+            <option value="Clasp check enquiry">Clasp check enquiry</option>
+          </select></label>
+          <label>Details<textarea name="message" rows="4" placeholder="Tell us what happened, item condition, or what you want checked."></textarea></label>
+          <button class="btn btn-gold full" type="submit"><i data-icon="whatsapp"></i>Send on WhatsApp</button>
+          <small><i data-icon="lock"></i>Your details are used only to respond to your enquiry.</small>
+        </form>
+      </div>
+    </section>
+
+    <section class="section compact-section" aria-labelledby="watch-faq-title">
+      <div class="container faq-grid">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Useful answers</p>
+          <h2 id="watch-faq-title">Before You <span>Bring It In</span></h2>
+          <p>Quick answers to help customers understand what to expect.</p>
+        </div>
+        <div class="faq-list reveal delay-1">
+          <details open><summary>Do I need an appointment?</summary><p>No. Walk-ins are welcome, but a WhatsApp photo first can help us guide you faster.</p></details>
+          <details><summary>Can every item be fixed or polished?</summary><p>Not always. It depends on the item condition, material and damage. We check first and explain honestly.</p></details>
+          <details><summary>Do you replace watch batteries?</summary><p>We handle watch battery enquiries in store. Availability and suitability depend on the watch type.</p></details>
+          <details><summary>Can you adjust bracelets?</summary><p>Simple bracelet adjustment support may be possible. Bring the item in so we can check safely.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section" aria-labelledby="care-cta-title">
+      <div class="container launch-panel reveal">
+        <div>
+          <p class="eyebrow">Care note</p>
+          <h2 id="care-cta-title">Bring It In For A Check</h2>
+          <p>We check the item first and explain the safest option clearly.</p>
+        </div>
+        <div class="launch-actions">
+          <a class="btn btn-gold" href="https://wa.me/447398770915?text=Hi%20MH%20Connect%2C%20can%20you%20check%20my%20watch%20or%20jewellery%20item%3F" target="_blank" rel="noopener"><i data-icon="whatsapp"></i>Ask on WhatsApp</a>
+          <a class="btn btn-outline" href="contact.html"><i data-icon="pin"></i>Visit Shop</a>
+        </div>
+      </div>
     </section>
 
   </main>

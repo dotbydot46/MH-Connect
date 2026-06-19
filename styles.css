@@ -2679,3 +2679,21 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
     font-size: 1rem;
   }
 }
+
+
+/* WATCH FINAL RESPONSIVE TUNE */
+.btn i[data-icon],
+.nav-button i[data-icon],
+.floating-wa i[data-icon] {
+  color: currentColor;
+}
+
+.btn-gold i[data-icon] {
+  color: #110f09;
+}
+
+@media (max-width: 760px) {
+  .faq-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
