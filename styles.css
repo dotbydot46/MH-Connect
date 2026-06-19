@@ -108,13 +108,11 @@ i[data-icon="bag"]::before { content: "▱"; }
 i[data-icon="smile"]::before { content: "☺"; }
 i[data-icon="mail"]::before { content: "✉"; }
 i[data-icon="lock"]::before { content: "▣"; }
-i[data-icon="case"]::before { content: "▣"; }
-i[data-icon="screen"]::before { content: "▭"; }
-i[data-icon="charger"]::before { content: "⌁"; }
-i[data-icon="earbuds"]::before { content: "♪"; }
-i[data-icon="powerbank"]::before { content: "▰"; }
-i[data-icon="facebook"]::before { content: "f"; font-weight: 900; }
-i[data-icon="instagram"]::before { content: "◎"; }
+i[data-icon="print"]::before { content: "▤"; }
+i[data-icon="copy"]::before { content: "▥"; }
+i[data-icon="scan"]::before { content: "▧"; }
+i[data-icon="photo"]::before { content: "▨"; }
+i[data-icon="laminate"]::before { content: "▫"; }
 
 
 /* Header */
@@ -2616,11 +2614,7 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
 }
 
 
-/* =========================================================
-   FINAL RESPONSIVE POLISH
-   Small site-wide improvements for mobile/tablet usability.
-   ========================================================= */
-
+/* PRINTING FINAL SITE RESPONSIVE TUNE */
 .btn i[data-icon],
 .nav-button i[data-icon],
 .floating-wa i[data-icon] {
@@ -2629,13 +2623,6 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
 
 .btn-gold i[data-icon] {
   color: #110f09;
-}
-
-.hero-actions .btn,
-.service-cta .btn,
-.launch-actions .btn,
-.nav-button {
-  line-height: 1.2;
 }
 
 @media (max-width: 1080px) {
@@ -2650,16 +2637,12 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
 }
 
 @media (max-width: 760px) {
-  .section,
+  .page-hero,
   .compact-section,
-  .split-section {
+  .split-section,
+  .section {
     padding-top: 48px !important;
     padding-bottom: 48px !important;
-  }
-
-  .page-hero {
-    padding-top: 54px !important;
-    padding-bottom: 44px !important;
   }
 
   .hero-actions {
@@ -2671,10 +2654,10 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
     min-height: 52px;
   }
 
+  .launch-panel,
   .service-cta,
   .quality-strip,
-  .repair-benefits,
-  .launch-panel {
+  .repair-benefits {
     padding: 20px;
   }
 
@@ -2694,9 +2677,5 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
 
   .brand strong {
     font-size: 1rem;
-  }
-
-  .nav-button {
-    min-height: 48px;
   }
 }
