@@ -614,3 +614,252 @@ body:has(.accessories-hero) .floating-wa i[data-icon] {
     height: 23px !important;
   }
 }
+
+
+/* =========================================================
+   ACCESSORIES REAL HERO PHOTO POLISH
+   Uses a realistic accessories image while keeping the
+   borderless, blended premium website feel.
+   ========================================================= */
+
+.accessories-hero {
+  min-height: 650px;
+  display: grid;
+  align-items: center;
+  padding-top: clamp(82px, 5.8vw, 118px) !important;
+  padding-bottom: 74px !important;
+}
+
+.accessories-hero .page-hero-grid,
+.page-hero:has(.accessory-hero-photo) .page-hero-grid {
+  grid-template-columns: minmax(0,.92fr) minmax(420px,.86fr);
+  gap: clamp(34px,5vw,78px);
+}
+
+.accessories-hero h1,
+.page-hero:has(.accessory-hero-photo) h1 {
+  max-width: 820px;
+  font-size: clamp(3.35rem,7.1vw,6.65rem);
+  line-height: .95;
+}
+
+.accessories-hero .hero-title-sub,
+.page-hero:has(.accessory-hero-photo) .hero-title-sub {
+  max-width: 760px;
+  font-size: clamp(1.65rem,2.8vw,2.55rem);
+  line-height: 1.18;
+  color: var(--cream);
+  font-weight: 850;
+  letter-spacing: .025em;
+}
+
+.accessory-hero-photo {
+  position: relative;
+  min-height: 470px;
+  margin: 0;
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.accessory-hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 3% -2% 4%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 52% 42%, rgba(240,210,138,.24), transparent 34%),
+    radial-gradient(circle at 44% 82%, rgba(212,166,74,.15), transparent 36%);
+  filter: blur(18px);
+  opacity: .92;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.accessory-hero-photo::after {
+  content: "";
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 64px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(212,166,74,.23), rgba(0,0,0,.32) 62%, transparent 72%);
+  filter: blur(1px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.accessory-hero-photo img {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  max-height: 455px;
+  object-fit: contain;
+  object-position: center;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 42px 58px rgba(0,0,0,.42))
+    saturate(1.02)
+    contrast(1.03);
+  animation: accessoryHeroFloat 7s ease-in-out infinite;
+}
+
+.accessory-photo-pills {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: -4px;
+}
+
+.accessory-photo-pills span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(240,210,138,.36);
+  color: var(--cream);
+  background: rgba(7,9,12,.68);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 42px rgba(0,0,0,.34);
+  font-size: .92rem;
+  font-weight: 900;
+}
+
+.accessory-photo-pills i[data-icon] {
+  width: 17px !important;
+  height: 17px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--gold-light) !important;
+  box-shadow: none !important;
+}
+
+.accessory-form-section .two-col {
+  align-items: start;
+}
+
+.accessory-form-section .enquiry-panel .btn.full {
+  justify-content: center;
+  min-height: 56px;
+  border-radius: 14px;
+}
+
+body:has(.accessory-hero-photo) .floating-wa {
+  right: 24px !important;
+  bottom: 24px !important;
+  width: auto !important;
+  min-width: 164px;
+  height: 58px !important;
+  padding: 0 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  color: var(--cream) !important;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(37,211,102,.26), transparent 34%),
+    linear-gradient(135deg, rgba(14,17,20,.96), rgba(7,9,12,.98)) !important;
+  border: 1px solid rgba(37,211,102,.48) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 22px 54px rgba(0,0,0,.46), 0 0 28px rgba(37,211,102,.10) !important;
+  font-weight: 900 !important;
+}
+
+body:has(.accessory-hero-photo) .floating-wa i[data-icon] {
+  width: 20px !important;
+  height: 20px !important;
+  color: #25D366 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@keyframes accessoryHeroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@media (max-width: 1160px) {
+  .accessories-hero .page-hero-grid,
+  .page-hero:has(.accessory-hero-photo) .page-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accessory-hero-photo {
+    min-height: 385px;
+  }
+
+  .accessory-hero-photo img {
+    max-height: 380px;
+  }
+}
+
+@media (max-width: 760px) {
+  .accessories-hero,
+  .page-hero:has(.accessory-hero-photo) {
+    min-height: auto;
+    padding-top: 54px !important;
+    padding-bottom: 44px !important;
+  }
+
+  .accessories-hero h1,
+  .page-hero:has(.accessory-hero-photo) h1 {
+    font-size: clamp(2.65rem,13vw,4rem);
+  }
+
+  .accessories-hero .hero-title-sub,
+  .page-hero:has(.accessory-hero-photo) .hero-title-sub {
+    font-size: clamp(1.35rem,6.7vw,1.95rem);
+  }
+
+  .accessory-hero-photo {
+    min-height: 280px;
+    margin-top: -8px;
+  }
+
+  .accessory-hero-photo img {
+    max-height: 275px;
+    width: 112%;
+    max-width: none;
+  }
+
+  .accessory-photo-pills {
+    gap: 8px;
+    margin-top: -2px;
+  }
+
+  .accessory-photo-pills span {
+    min-height: 36px;
+    padding: 8px 11px;
+    font-size: .84rem;
+  }
+
+  body:has(.accessory-hero-photo) .floating-wa {
+    right: 18px !important;
+    bottom: 18px !important;
+    min-width: 58px !important;
+    width: 58px !important;
+    height: 58px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    font-size: 0 !important;
+  }
+
+  body:has(.accessory-hero-photo) .floating-wa i[data-icon] {
+    width: 23px !important;
+    height: 23px !important;
+  }
+}

@@ -108,6 +108,14 @@ i[data-icon="bag"]::before { content: "▱"; }
 i[data-icon="smile"]::before { content: "☺"; }
 i[data-icon="mail"]::before { content: "✉"; }
 i[data-icon="lock"]::before { content: "▣"; }
+i[data-icon="case"]::before { content: "▣"; }
+i[data-icon="screen"]::before { content: "▭"; }
+i[data-icon="charger"]::before { content: "⌁"; }
+i[data-icon="earbuds"]::before { content: "♪"; }
+i[data-icon="powerbank"]::before { content: "▰"; }
+i[data-icon="facebook"]::before { content: "f"; font-weight: 900; }
+i[data-icon="instagram"]::before { content: "◎"; }
+
 
 /* Header */
 .site-header {
@@ -2604,5 +2612,91 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
   .accessory-wall img,
   .jewellery-photo {
     height: 210px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE POLISH
+   Small site-wide improvements for mobile/tablet usability.
+   ========================================================= */
+
+.btn i[data-icon],
+.nav-button i[data-icon],
+.floating-wa i[data-icon] {
+  color: currentColor;
+}
+
+.btn-gold i[data-icon] {
+  color: #110f09;
+}
+
+.hero-actions .btn,
+.service-cta .btn,
+.launch-actions .btn,
+.nav-button {
+  line-height: 1.2;
+}
+
+@media (max-width: 1080px) {
+  .nav-links {
+    max-height: calc(100vh - 110px);
+    overflow: auto;
+  }
+
+  .nav-links a {
+    padding: 14px 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .section,
+  .compact-section,
+  .split-section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .page-hero {
+    padding-top: 54px !important;
+    padding-bottom: 44px !important;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .btn,
+  .hero-actions .btn {
+    min-height: 52px;
+  }
+
+  .service-cta,
+  .quality-strip,
+  .repair-benefits,
+  .launch-panel {
+    padding: 20px;
+  }
+
+  .floating-wa {
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: min(100% - 20px, var(--container));
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand strong {
+    font-size: 1rem;
+  }
+
+  .nav-button {
+    min-height: 48px;
   }
 }
