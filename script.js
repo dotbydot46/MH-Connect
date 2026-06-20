@@ -39,7 +39,8 @@ const iconPaths = {
   earbuds: '<path d="M7 14a4 4 0 0 1-4-4V8a4 4 0 0 1 8 0v2a4 4 0 0 1-4 4Z"/><path d="M17 14a4 4 0 0 1-4-4V8a4 4 0 0 1 8 0v2a4 4 0 0 1-4 4Z"/><path d="M7 14v7"/><path d="M17 14v7"/><path d="M5 21h4"/><path d="M15 21h4"/>',
   instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/>',
   facebook: '<path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1Z"/>',
-  powerbank: '<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h3"/><path d="M8 15h8"/><path d="M16 11l-2 3h3l-2 3"/>'
+  powerbank: '<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h3"/><path d="M8 15h8"/><path d="M16 11l-2 3h3l-2 3"/>',
+  print: '<path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/>'
 };
 
 function renderPremiumIcons() {
@@ -166,6 +167,10 @@ const fieldLabels = {
   model: "Phone model",
   issue: "Issue",
   service: "Service",
+  item: "Item",
+  quantity: "Quantity",
+  preference: "Style / colour preference",
+  contact_method: "Preferred contact method",
   message: "Message"
 };
 
@@ -241,3 +246,90 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+
+// MH Connect launch-ready utilities: contact tracking, open status and lazy map.
+function mhTrack(eventName, params = {}) {
+  const payload = {
+    event_category: "mh_connect",
+    page_path: window.location.pathname,
+    ...params
+  };
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, payload);
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: eventName, ...payload });
+}
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href]");
+  if (!link) return;
+
+  const href = link.getAttribute("href") || "";
+  const location = link.dataset.location || link.closest("section")?.id || "site";
+  let eventName = link.dataset.track || "";
+
+  if (!eventName) {
+    if (href.startsWith("tel:")) eventName = "click_phone";
+    else if (href.startsWith("mailto:")) eventName = "click_email";
+    else if (href.includes("wa.me/")) eventName = "click_whatsapp";
+    else if (href.includes("google.com/maps")) eventName = "click_directions";
+  }
+
+  if (eventName) {
+    mhTrack(eventName, {
+      cta_location: location,
+      link_text: link.textContent.trim().replace(/\s+/g, " ").slice(0, 80)
+    });
+  }
+});
+
+document.querySelectorAll("[data-map-load]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const shell = button.closest("[data-map-shell]");
+    const frame = shell ? shell.querySelector("[data-map-frame]") : null;
+    const src = button.dataset.mapSrc;
+    if (frame && src && !frame.src) frame.src = src;
+    if (shell) shell.classList.add("is-loaded");
+    mhTrack("map_load", { cta_location: "contact_map" });
+  });
+});
+
+function getLondonParts() {
+  const formatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  });
+  const parts = Object.fromEntries(formatter.formatToParts(new Date()).map(part => [part.type, part.value]));
+  return { weekday: parts.weekday, hour: Number(parts.hour), minute: Number(parts.minute) };
+}
+
+function updateOpenStatus() {
+  const targets = document.querySelectorAll("[data-open-status]");
+  if (!targets.length) return;
+  const { weekday, hour, minute } = getLondonParts();
+  const minutes = hour * 60 + minute;
+  const isSunday = weekday === "Sun";
+  const open = isSunday ? 10 * 60 : 9 * 60;
+  const close = isSunday ? 17 * 60 : 19 * 60;
+  const isOpen = minutes >= open && minutes < close;
+  const closingLabel = isSunday ? "5:00 PM" : "7:00 PM";
+  const nextLabel = isSunday ? "Monday 9:00 AM" : "tomorrow 9:00 AM";
+
+  const text = isOpen
+    ? `Open now • Closes ${closingLabel}`
+    : `Closed now • Opens ${nextLabel}`;
+
+  targets.forEach((target) => {
+    target.textContent = text;
+    target.classList.toggle("is-open", isOpen);
+  });
+}
+updateOpenStatus();
+setInterval(updateOpenStatus, 60000);

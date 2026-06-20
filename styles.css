@@ -2697,3 +2697,60 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* MH CONNECT LAUNCH READY POLISH */
+:focus-visible {
+  outline: 3px solid rgba(240,210,138,.9);
+  outline-offset: 4px;
+}
+
+.footer-links a[href="privacy.html"] {
+  color: var(--gold-light);
+}
+
+.privacy-content {
+  display: grid;
+  gap: 18px;
+  max-width: 980px;
+}
+
+.privacy-content .note-card h2 {
+  color: var(--gold-light);
+  margin-top: 0;
+}
+
+.privacy-content .note-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-actions.compact {
+    width: 100%;
+  }
+
+  .hero-actions.compact .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .top-bar__inner {
+    gap: 9px;
+  }
+
+  .footer-grid-clean {
+    gap: 24px;
+  }
+}

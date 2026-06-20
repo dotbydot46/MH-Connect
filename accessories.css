@@ -171,3 +171,338 @@
     font-size: .78rem;
   }
 }
+
+
+/* ACCESSORIES PAGE V3 — stronger retail flow and buying confidence */
+.accessory-feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:32px}
+.accessory-feature-card{position:relative;min-height:270px;display:grid;align-content:start;gap:12px;padding:24px;overflow:hidden;border-radius:24px;border:1px solid rgba(212,166,74,.38);background:radial-gradient(circle at 18% 0%,rgba(240,210,138,.14),transparent 35%),linear-gradient(180deg,rgba(20,24,29,.96),rgba(7,9,12,.97));box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.accessory-feature-card:hover{transform:translateY(-6px);border-color:rgba(240,210,138,.76);box-shadow:0 28px 70px rgba(0,0,0,.45)}
+.accessory-feature-card>i[data-icon]{width:60px!important;height:60px!important;padding:15px!important;border:1px solid rgba(212,166,74,.62)!important;border-radius:50%;color:var(--gold-light)!important;background:rgba(7,9,12,.60)!important}
+.accessory-feature-card span{width:fit-content;display:inline-flex;padding:6px 10px;border-radius:999px;border:1px solid rgba(212,166,74,.28);color:var(--gold-light);background:rgba(7,9,12,.46);font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.accessory-feature-card h3{margin:0;color:var(--cream);font-size:1.35rem}.accessory-feature-card p{margin:0;color:var(--muted);line-height:1.62}
+.mini-fill-btn{width:fit-content;min-height:42px;margin-top:auto;padding:0 14px;border:1px solid rgba(240,210,138,.46);border-radius:999px;color:var(--cream);background:rgba(7,9,12,.62);font-weight:900;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.mini-fill-btn:hover,.mini-fill-btn:focus-visible{transform:translateY(-2px);background:rgba(212,166,74,.14);border-color:rgba(240,210,138,.76)}
+.accessory-model-guide .two-col{align-items:center}.accessory-check-card{padding:30px;border-radius:24px;border:1px solid rgba(212,166,74,.42);background:radial-gradient(circle at 18% 0%,rgba(37,211,102,.12),transparent 36%),linear-gradient(180deg,rgba(20,24,29,.95),rgba(7,9,12,.97));box-shadow:var(--shadow)}
+.accessory-check-card>i[data-icon]{width:68px!important;height:68px!important;padding:18px!important;border:1px solid rgba(212,166,74,.62)!important;border-radius:50%;color:var(--gold-light)!important;background:rgba(7,9,12,.60)!important}
+.accessory-check-card h3{margin:18px 0 10px;color:var(--gold-light);font-size:1.55rem}.accessory-check-card p{color:var(--muted);line-height:1.65}.accessory-check-card .btn{margin-top:18px;justify-content:center}
+@media(max-width:1160px){.accessory-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.accessory-feature-grid{grid-template-columns:1fr}.accessory-feature-card{min-height:auto}.accessory-check-card{padding:22px}}
+
+
+/* =========================================================
+   ACCESSORIES PRO V2 — premium retail/customer journey
+   ========================================================= */
+
+.pro-accessories-hero .page-hero-grid {
+  grid-template-columns: minmax(0,.94fr) minmax(420px,.86fr);
+  gap: clamp(34px,5vw,78px);
+}
+
+.accessory-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 27px 0 0;
+}
+
+.accessory-trust-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(212,166,74,.32);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(7,9,12,.58);
+  box-shadow: 0 16px 36px rgba(0,0,0,.25);
+  font-weight: 900;
+}
+
+.accessory-trust-strip i[data-icon] {
+  width: 18px !important;
+  height: 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--gold-light) !important;
+}
+
+.accessory-shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 20px;
+  margin-top: 34px;
+}
+
+.accessory-shop-card {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  border-radius: 26px;
+  border: 1px solid rgba(212,166,74,.34);
+  background: rgba(7,9,12,.9);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.accessory-shop-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(240,210,138,.76);
+  box-shadow: 0 34px 90px rgba(0,0,0,.50);
+}
+
+.accessory-shop-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.52) saturate(.95);
+  transform: scale(1.02);
+  transition: transform .35s ease, filter .35s ease;
+  z-index: -2;
+}
+
+.accessory-shop-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7,9,12,.08), rgba(7,9,12,.62) 46%, rgba(7,9,12,.96)),
+    radial-gradient(circle at 18% 8%, rgba(240,210,138,.18), transparent 34%);
+  z-index: -1;
+}
+
+.accessory-shop-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(.66) saturate(1.08);
+}
+
+.accessory-shop-card div {
+  padding: 26px;
+  display: grid;
+  gap: 10px;
+}
+
+.accessory-shop-card i[data-icon] {
+  width: 58px !important;
+  height: 58px !important;
+  padding: 15px !important;
+  border: 1px solid rgba(212,166,74,.62) !important;
+  border-radius: 50%;
+  color: var(--gold-light) !important;
+  background: rgba(7,9,12,.68) !important;
+  box-shadow: 0 16px 42px rgba(0,0,0,.36);
+}
+
+.accessory-shop-card h3 {
+  margin: 0;
+  color: var(--cream);
+  font-size: 1.45rem;
+}
+
+.accessory-shop-card p {
+  margin: 0;
+  color: rgba(245,241,232,.78);
+  line-height: 1.58;
+}
+
+.accessory-shop-card a {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  margin-top: 8px;
+  padding: 0 14px;
+  border: 1px solid rgba(240,210,138,.42);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(7,9,12,.62);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.accessory-shop-card a:hover,
+.accessory-shop-card a:focus-visible {
+  border-color: rgba(240,210,138,.78);
+  background: rgba(212,166,74,.14);
+}
+
+.accessory-feature-grid,
+.accessory-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.accessory-feature-card,
+.accessory-trust-card {
+  position: relative;
+  min-height: 270px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(212,166,74,.38);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(240,210,138,.14), transparent 35%),
+    linear-gradient(180deg, rgba(20,24,29,.96), rgba(7,9,12,.97));
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.accessory-feature-card:hover,
+.accessory-trust-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(240,210,138,.76);
+  box-shadow: 0 28px 70px rgba(0,0,0,.45);
+}
+
+.accessory-feature-card > i[data-icon],
+.accessory-trust-card > i[data-icon] {
+  width: 60px !important;
+  height: 60px !important;
+  padding: 15px !important;
+  border: 1px solid rgba(212,166,74,.62) !important;
+  border-radius: 50%;
+  color: var(--gold-light) !important;
+  background: rgba(7,9,12,.60) !important;
+}
+
+.accessory-feature-card span {
+  width: fit-content;
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,166,74,.28);
+  color: var(--gold-light);
+  background: rgba(7,9,12,.46);
+  font-size: .78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.accessory-feature-card h3,
+.accessory-trust-card h3 {
+  margin: 0;
+  color: var(--cream);
+  font-size: 1.35rem;
+}
+
+.accessory-feature-card p,
+.accessory-trust-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.mini-fill-btn {
+  width: fit-content;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 0 14px;
+  border: 1px solid rgba(240,210,138,.46);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(7,9,12,.62);
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.mini-fill-btn:hover,
+.mini-fill-btn:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(212,166,74,.14);
+  border-color: rgba(240,210,138,.76);
+}
+
+.accessory-model-guide .two-col {
+  align-items: center;
+}
+
+.accessory-check-card {
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(212,166,74,.42);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(37,211,102,.12), transparent 36%),
+    linear-gradient(180deg, rgba(20,24,29,.95), rgba(7,9,12,.97));
+  box-shadow: var(--shadow);
+}
+
+.accessory-check-card > i[data-icon] {
+  width: 68px !important;
+  height: 68px !important;
+  padding: 18px !important;
+  border: 1px solid rgba(212,166,74,.62) !important;
+  border-radius: 50%;
+  color: var(--gold-light) !important;
+  background: rgba(7,9,12,.60) !important;
+}
+
+.accessory-check-card h3 {
+  margin: 18px 0 10px;
+  color: var(--gold-light);
+  font-size: 1.55rem;
+}
+
+.accessory-check-card p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.accessory-check-card .btn {
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.accessory-form-section .enquiry-panel select,
+.accessory-form-section .enquiry-panel input,
+.accessory-form-section .enquiry-panel textarea {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 1160px) {
+  .pro-accessories-hero .page-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accessory-shop-grid,
+  .accessory-feature-grid,
+  .accessory-trust-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .accessory-trust-strip span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .accessory-shop-grid,
+  .accessory-feature-grid,
+  .accessory-trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accessory-shop-card {
+    min-height: 330px;
+  }
+
+  .accessory-feature-card,
+  .accessory-trust-card {
+    min-height: auto;
+  }
+
+  .accessory-check-card {
+    padding: 22px;
+  }
+}
