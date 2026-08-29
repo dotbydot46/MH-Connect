@@ -53,7 +53,7 @@ function renderPremiumIcons() {
 }
 renderPremiumIcons();
 
-const WHATSAPP_NUMBER = "447398770915";
+const WHATSAPP_NUMBER = "447337323727";
 
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
