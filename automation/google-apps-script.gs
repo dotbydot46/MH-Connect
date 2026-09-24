@@ -4,7 +4,7 @@
  * Setup:
  * 1. Create a private Google Sheet and open Extensions > Apps Script.
  * 2. Paste this file into the bound project.
- * 3. Add the Sheet ID below, run setupLeadSheet(), then deploy as a Web app.
+ * 3. Run setupLeadSheet() once from the bound script, then deploy as a Web app.
  * 4. Paste the deployment URL into LEAD_CAPTURE_ENDPOINT in script.js.
  *
  * Do not put customer records or Google credentials in the website repository.
@@ -16,6 +16,8 @@ const CONFIG = Object.freeze({
   OWNER_EMAIL: "mhconnect.uk2026@gmail.com",
   ALLOWED_PAGE_PREFIX: "/MH-Connect/"
 });
+
+const SPREADSHEET_ID_PROPERTY = "MH_CONNECT_SPREADSHEET_ID";
 
 const HEADERS = [
   "Created",
@@ -105,7 +107,17 @@ function doPost(event) {
 }
 
 function setupLeadSheet() {
-  const sheet = getLeadSheet_();
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  if (!spreadsheet) {
+    throw new Error("Open Apps Script from the MH Connect Leads spreadsheet, then run setupLeadSheet again.");
+  }
+
+  PropertiesService.getScriptProperties().setProperty(
+    SPREADSHEET_ID_PROPERTY,
+    spreadsheet.getId()
+  );
+
+  const sheet = getLeadSheet_(spreadsheet);
   sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
   sheet.setFrozenRows(1);
   sheet.getRange(1, 1, 1, HEADERS.length)
@@ -160,12 +172,16 @@ function createDailyDigestTrigger() {
     .create();
 }
 
-function getLeadSheet_() {
-  const spreadsheet = CONFIG.SPREADSHEET_ID === "PASTE_PRIVATE_SHEET_ID_HERE"
-    ? SpreadsheetApp.getActiveSpreadsheet()
-    : SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
+function getLeadSheet_(spreadsheetOverride) {
+  const configuredId = CONFIG.SPREADSHEET_ID === "PASTE_PRIVATE_SHEET_ID_HERE"
+    ? PropertiesService.getScriptProperties().getProperty(SPREADSHEET_ID_PROPERTY)
+    : CONFIG.SPREADSHEET_ID;
 
-  if (!spreadsheet) throw new Error("Add the private spreadsheet ID to CONFIG.");
+  const spreadsheet = spreadsheetOverride || (configuredId
+    ? SpreadsheetApp.openById(configuredId)
+    : null);
+
+  if (!spreadsheet) throw new Error("Run setupLeadSheet once before using the web app.");
   return spreadsheet.getSheetByName(CONFIG.SHEET_NAME) || spreadsheet.insertSheet(CONFIG.SHEET_NAME);
 }
 

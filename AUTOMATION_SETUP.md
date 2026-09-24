@@ -16,7 +16,7 @@ The website already creates a unique reference and opens a structured WhatsApp m
 1. Create a private Google Sheet for MH Connect leads.
 2. Open **Extensions → Apps Script** from that Sheet.
 3. Replace the editor contents with `automation/google-apps-script.gs`.
-4. Copy the Sheet ID from its URL and add it to `SPREADSHEET_ID` in the script.
+4. Leave `SPREADSHEET_ID` unchanged. The setup function securely records the bound Sheet ID for the web app.
 5. Run `setupLeadSheet` once and approve the requested permissions.
 6. Use **Deploy → New deployment → Web app**. Run as the owner and choose the narrowest access setting that still accepts public website submissions.
 7. Copy the Web app URL into `LEAD_CAPTURE_ENDPOINT` near the top of `script.js`.
