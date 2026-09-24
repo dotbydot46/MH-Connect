@@ -217,6 +217,12 @@ function captureEnquiryRecord(payload) {
   });
 }
 
+function getLeadSourcePage() {
+  const path = window.location.pathname || "/";
+  if (path === "/" || path.startsWith("/MH-Connect/")) return path;
+  return `/MH-Connect${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 whatsappForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -250,7 +256,7 @@ whatsappForms.forEach((form) => {
       reference,
       createdAt: new Date().toISOString(),
       enquiryType: title,
-      page: window.location.pathname,
+      page: getLeadSourcePage(),
       details
     });
     showEnquiryStatus(form, reference);

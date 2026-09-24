@@ -23,7 +23,7 @@ The website creates a unique reference, adds the enquiry to the private MH Conne
 8. Submit one test enquiry and confirm the website reference matches the new Sheet row.
 9. Run `createDailyDigestTrigger` only if the 9 AM follow-up email is wanted.
 
-If MH Connect later moves to a custom domain, update `ALLOWED_PAGE_PREFIX` in the Apps Script and keep the privacy notice aligned with how enquiry records are stored and retained.
+The deployed collector validates the original `/MH-Connect/` source prefix. `getLeadSourcePage()` in `script.js` preserves that value when the site is served from the custom domain, so the existing deployment URL keeps working. If the collector is later changed to accept root-domain paths directly, create a new Apps Script deployment version and submit a test enquiry before removing this compatibility mapping.
 
 ## Data and safety rules
 

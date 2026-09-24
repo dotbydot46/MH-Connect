@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dotbydot46.github.io/MH-Connect/sitemap.xml
+Sitemap: https://mhconnect.uk/sitemap.xml
