@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Notice | MH Connect</title>
   <meta name="description" content="Privacy notice for MH Connect website enquiries, WhatsApp, email and contact forms." />
-  <meta name="theme-color" content="#0f1216" />
+  <meta name="theme-color" content="#081426" />
   <meta property="og:title" content="Privacy Notice | MH Connect" />
   <meta property="og:description" content="Privacy notice for MH Connect website enquiries, WhatsApp, email and contact forms." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="MH Connect" />
-  <meta property="og:image" content="assets/photos/mh-emblem.png" />
-  <link rel="icon" href="assets/photos/mh-emblem.png" />
+  <meta property="og:image" content="https://dotbydot46.github.io/MH-Connect/assets/photos/mh-emblem.png" />
+  <link rel="icon" href="assets/photos/mh-emblem-160.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="pages.css" />
   <link rel="stylesheet" href="contact.css" />
@@ -25,7 +25,7 @@
   "@id": "https://dotbydot46.github.io/MH-Connect/#mhconnect",
   "name": "MH Connect",
   "url": "https://dotbydot46.github.io/MH-Connect/",
-  "image": "https://dotbydot46.github.io/MH-Connect/assets/photos/shop-front.jpg",
+  "image": "https://dotbydot46.github.io/MH-Connect/assets/photos/shop-front.webp",
   "logo": "https://dotbydot46.github.io/MH-Connect/assets/photos/mh-emblem.png",
   "telephone": "+447337323727",
   "email": "mhconnect.uk2026@gmail.com",
@@ -55,13 +55,13 @@
         "Saturday"
       ],
       "opens": "09:00",
-      "closes": "19:00"
+      "closes": "19:30"
     },
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Sunday",
       "opens": "10:00",
-      "closes": "17:00"
+      "closes": "18:00"
     }
   ],
   "contactPoint": [
@@ -119,6 +119,7 @@
   }
 }
 </script>
+  <link rel="stylesheet" href="modern.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -126,7 +127,7 @@
     <div class="top-bar" aria-label="Shop information">
       <div class="container top-bar__inner">
         <span><i data-icon="pin"></i>59 Lower Addiscombe Road, Croydon CR0 6PQ</span>
-        <span><i data-icon="clock"></i><span data-open-status>Mon–Sat 9:00–19:00 • Sun 10:00–17:00</span></span>
+        <span><i data-icon="clock"></i><span data-open-status>Mon–Sat 9:00–19:30 • Sun 10:00–18:00</span></span>
         <a href="tel:+447337323727"><i data-icon="phone"></i>07337 323727</a>
         <a href="https://wa.me/447337323727?text=Hi%20MH%20Connect%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener"><i data-icon="whatsapp"></i>WhatsApp Us</a>
       </div>
@@ -134,7 +135,7 @@
 
     <nav class="navbar container" aria-label="Main navigation">
       <a class="brand brand-premium" href="index.html" aria-label="MH Connect home">
-        <span class="brand-mark" aria-hidden="true"><img src="assets/photos/mh-emblem.png" alt="" width="700" height="700" /></span>
+        <span class="brand-mark" aria-hidden="true"><img src="assets/photos/mh-emblem-160.png" alt="" width="160" height="160" /></span>
         <span class="brand-copy"><strong>MH Connect</strong><small>Your Local Tech &amp; Lifestyle Store</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-toggle>
@@ -145,8 +146,8 @@
         <a class="" href="phone-repairs.html">Repairs</a>
         <a class="" href="accessories.html">Accessories</a>
         <a class="" href="printing.html">Printing</a>
-        <a class="" href="watches-jewellery.html">Watches & Jewellery</a>
-        <a class="active" href="privacy.html">Contact</a>
+        <a class="" href="watches-jewellery.html">Watches &amp; Jewellery</a>
+        <a class="" href="contact.html">Contact</a>
         <a class="nav-button" href="https://wa.me/447337323727?text=Hi%20MH%20Connect%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener"><i data-icon="whatsapp"></i>WhatsApp Us</a>
       </div>
     </nav>
@@ -157,16 +158,22 @@
       <div class="container page-hero-grid">
         <div class="page-hero-copy reveal">
           <p class="eyebrow">Privacy notice</p>
-          <h1 id="privacy-title">Your Details Are <span>Handled Carefully</span></h1>
+          <h1 id="privacy-title">Your details are <span>handled carefully</span></h1>
           <p class="hero-text">This notice explains how MH Connect uses information you send through WhatsApp, email, phone calls and website enquiry forms.</p>
           <div class="hero-actions compact">
             <a class="btn btn-gold" href="contact.html"><i data-icon="mail"></i>Contact Us</a>
             <a class="btn btn-outline" href="index.html"><i data-icon="store"></i>Back Home</a>
           </div>
         </div>
-        <figure class="contact-hero-photo reveal delay-1">
-          <img src="assets/photos/contact-shop-integrated.png" alt="MH Connect shop front in Croydon" loading="eager">
-        </figure>
+        <aside class="service-hero-panel reveal delay-1" aria-label="Privacy summary">
+          <p class="eyebrow">In plain English</p>
+          <h2>Only what we need to help.</h2>
+          <div class="hero-service-list">
+            <div><i data-icon="lock"></i><span><strong>Limited use</strong>Your details are used to answer the enquiry and provide the requested service.</span></div>
+            <div><i data-icon="shield"></i><span><strong>Handled carefully</strong>We do not sell personal information to other businesses.</span></div>
+            <div><i data-icon="mail"></i><span><strong>You can contact us</strong>Ask a privacy question by email, phone or in store.</span></div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -214,7 +221,7 @@
     <div class="container footer-grid footer-grid-clean">
       <section class="footer-brand-card" aria-label="MH Connect summary">
         <div class="footer-logo-row">
-          <span class="brand-mark footer-mark" aria-hidden="true"><img src="assets/photos/mh-emblem.png" alt="" loading="lazy"></span>
+          <span class="brand-mark footer-mark" aria-hidden="true"><img src="assets/photos/mh-emblem-160.png" alt="" loading="lazy" width="160" height="160"></span>
           <div>
             <h2>MH Connect</h2>
             <p class="footer-tagline">Your trusted local shop for mobile accessories, repairs, printing, watches, jewellery care, passport photos and everyday tech help.</p>
@@ -234,6 +241,8 @@
         <a href="printing.html">Printing</a>
         <a href="watches-jewellery.html">Watches &amp; Jewellery</a>
         <a href="contact.html">Contact</a>
+        <a href="warranty.html">Warranty &amp; Aftercare</a>
+        <a href="review.html">Leave a Review</a>
         <a href="privacy.html">Privacy Notice</a>
       </nav>
       <nav class="footer-column footer-links" aria-label="Footer services">
@@ -243,13 +252,13 @@
         <a href="printing.html">Printing &amp; Documents</a>
         <a href="watches-jewellery.html">Watches</a>
         <a href="watches-jewellery.html">Jewellery Care</a>
-        <a href="contact.html">Passport Photos</a>
+        <a href="printing.html#passport-photos">Passport Photos</a>
       </nav>
       <section class="footer-column footer-contact" aria-label="Contact information">
         <h3>Contact Info</h3>
         <div class="footer-contact-list">
           <p><i data-icon="pin"></i><span>59 Lower Addiscombe Road,<br>Croydon CR0 6PQ</span></p>
-          <p><i data-icon="clock"></i><span>Mon–Sat 9:00 AM – 7:00 PM<br>Sunday 10:00 AM – 5:00 PM</span></p>
+          <p><i data-icon="clock"></i><span>Mon–Sat 9:00 AM – 7:30 PM<br>Sunday 10:00 AM – 6:00 PM</span></p>
           <p><i data-icon="phone"></i><a href="tel:+447337323727">07337 323727</a></p>
           <p><i data-icon="whatsapp"></i><a href="https://wa.me/447337323727" target="_blank" rel="noopener">07337 323727</a></p>
           <p><i data-icon="mail"></i><a href="mailto:mhconnect.uk2026@gmail.com">mhconnect.uk2026@gmail.com</a></p>

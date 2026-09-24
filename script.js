@@ -1,4 +1,4 @@
-// Premium SVG icon system for all <i data-icon="..."> elements.
+// One consistent line-icon system for all <i data-icon="..."> elements.
 const iconPaths = {
   pin: '<path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/>',
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
@@ -15,7 +15,6 @@ const iconPaths = {
   watch: '<path d="M8 3h8l1 4H7l1-4Z"/><circle cx="12" cy="12" r="5"/><path d="M7 17h10l-1 4H8l-1-4Z"/><path d="M12 9v3l2 1"/>',
   diamond: '<path d="M6 3h12l4 6-10 12L2 9l4-6Z"/><path d="M2 9h20"/><path d="m6 3 6 18 6-18"/>',
   id: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c1-2 5-2 6 0"/><path d="M14 10h4"/><path d="M14 14h3"/>',
-  vape: '<path d="M4 15h12a3 3 0 0 1 0 6H4z"/><path d="M16 18h5"/><path d="M7 11c0-2 2-2 2-4"/><path d="M12 11c0-2 2-2 2-4"/>',
   battery: '<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2"/><path d="M7 11h6"/>',
   plug: '<path d="M12 22v-5"/><path d="M9 7V2"/><path d="M15 7V2"/><path d="M7 7h10v4a5 5 0 0 1-10 0V7Z"/>',
   speaker: '<path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/>',
@@ -40,7 +39,11 @@ const iconPaths = {
   instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/>',
   facebook: '<path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1Z"/>',
   powerbank: '<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h3"/><path d="M8 15h8"/><path d="M16 11l-2 3h3l-2 3"/>',
-  print: '<path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/>'
+  print: '<path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/>',
+  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',
+  scan: '<path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/>',
+  laminate: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/><path d="M16 18h.01"/>',
+  photo: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 15-5-5L5 20"/>'
 };
 
 function renderPremiumIcons() {
@@ -48,12 +51,17 @@ function renderPremiumIcons() {
     const name = icon.dataset.icon;
     const path = iconPaths[name] || iconPaths.sparkle;
     icon.setAttribute('aria-hidden', 'true');
-    icon.innerHTML = `<svg viewBox="0 0 24 24" focusable="false" role="img"><g fill="none" stroke="currentColor" stroke-width="2.05" stroke-linecap="round" stroke-linejoin="round">${path}</g></svg>`;
+    icon.innerHTML = `<svg viewBox="0 0 24 24" focusable="false" role="img"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${path}</g></svg>`;
   });
 }
 renderPremiumIcons();
 
 const WHATSAPP_NUMBER = "447337323727";
+const SHOP_PHONE_DISPLAY = "07337 323727";
+
+// Paste the private lead-capture web-app URL here when the automation is connected.
+// The website continues to work normally while this is blank.
+const LEAD_CAPTURE_ENDPOINT = "";
 
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
@@ -68,6 +76,8 @@ const lightboxClose = document.querySelector("[data-lightbox-close]");
 const lightboxButtons = document.querySelectorAll("[data-lightbox-src]");
 const navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
 const sections = [...document.querySelectorAll("main section[id], footer[id]")];
+
+document.querySelector(".nav-links a.active")?.setAttribute("aria-current", "page");
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
@@ -165,35 +175,96 @@ const fieldLabels = {
   name: "Name",
   phone: "Phone",
   model: "Phone model",
+  device: "Device / item",
   issue: "Issue",
   service: "Service",
   item: "Item",
   quantity: "Quantity",
+  warranty_id: "Warranty reference",
   preference: "Style / colour preference",
   contact_method: "Preferred contact method",
   message: "Message"
 };
+
+function makeEnquiryReference() {
+  const date = new Date().toISOString().slice(0, 10).replaceAll("-", "");
+  const random = Math.random().toString(36).slice(2, 8).toUpperCase();
+  return `MHC-${date}-${random}`;
+}
+
+function showEnquiryStatus(form, reference) {
+  let status = form.querySelector("[data-form-status]");
+  if (!status) {
+    status = document.createElement("p");
+    status.className = "form-status";
+    status.dataset.formStatus = "";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+    form.querySelector('button[type="submit"]')?.insertAdjacentElement("afterend", status);
+  }
+  status.textContent = `Enquiry ${reference} is ready. WhatsApp is opening with the details.`;
+}
+
+function captureEnquiryRecord(payload) {
+  if (!LEAD_CAPTURE_ENDPOINT) return;
+  fetch(LEAD_CAPTURE_ENDPOINT, {
+    method: "POST",
+    mode: "no-cors",
+    keepalive: true,
+    headers: { "Content-Type": "text/plain;charset=UTF-8" },
+    body: JSON.stringify(payload)
+  }).catch(() => {
+    // WhatsApp remains the primary route if the optional automation is unavailable.
+  });
+}
 
 whatsappForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
+    if (String(formData.get("website") || "").trim()) return;
+    formData.delete("website");
+
     const title = form.dataset.formTitle || "General enquiry";
+    const reference = makeEnquiryReference();
+    const details = {};
     const lines = [
       "Hi MH Connect, I would like to make an enquiry.",
       "",
+      `Reference: ${reference}`,
       `Enquiry type: ${title}`
     ];
 
     for (const [key, value] of formData.entries()) {
       const cleaned = String(value).trim();
-      if (cleaned) lines.push(`${fieldLabels[key] || key}: ${cleaned}`);
+      if (cleaned) {
+        details[key] = cleaned;
+        lines.push(`${fieldLabels[key] || key}: ${cleaned}`);
+      }
     }
 
-    lines.push("", "I can send photos if that helps.");
+    lines.push("", "Please confirm the likely price, availability and next step. I can send photos if that helps.");
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+    try {
+      localStorage.setItem("mh_connect_last_enquiry", JSON.stringify({
+        reference,
+        type: title,
+        createdAt: new Date().toISOString()
+      }));
+    } catch (_) {
+      // The enquiry still works when browser storage is unavailable.
+    }
+    captureEnquiryRecord({
+      reference,
+      createdAt: new Date().toISOString(),
+      enquiryType: title,
+      page: window.location.pathname,
+      details
+    });
+    showEnquiryStatus(form, reference);
+    mhTrack("generate_enquiry", { enquiry_type: title, enquiry_reference: reference });
     window.open(url, "_blank", "noopener");
   });
 });
@@ -317,10 +388,20 @@ function updateOpenStatus() {
   const minutes = hour * 60 + minute;
   const isSunday = weekday === "Sun";
   const open = isSunday ? 10 * 60 : 9 * 60;
-  const close = isSunday ? 17 * 60 : 19 * 60;
+  const close = isSunday ? 18 * 60 : 19 * 60 + 30;
   const isOpen = minutes >= open && minutes < close;
-  const closingLabel = isSunday ? "5:00 PM" : "7:00 PM";
-  const nextLabel = isSunday ? "Monday 9:00 AM" : "tomorrow 9:00 AM";
+  const closingLabel = isSunday ? "6:00 PM" : "7:30 PM";
+  let nextLabel;
+
+  if (minutes < open) {
+    nextLabel = isSunday ? "today 10:00 AM" : "today 9:00 AM";
+  } else if (weekday === "Sat") {
+    nextLabel = "Sunday 10:00 AM";
+  } else if (isSunday) {
+    nextLabel = "Monday 9:00 AM";
+  } else {
+    nextLabel = "tomorrow 9:00 AM";
+  }
 
   const text = isOpen
     ? `Open now • Closes ${closingLabel}`
@@ -333,3 +414,7 @@ function updateOpenStatus() {
 }
 updateOpenStatus();
 setInterval(updateOpenStatus, 60000);
+
+document.querySelectorAll("[data-shop-phone]").forEach((target) => {
+  target.textContent = SHOP_PHONE_DISPLAY;
+});

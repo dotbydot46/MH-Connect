@@ -90,7 +90,6 @@ i[data-icon="headset"]::before { content: "◕"; }
 i[data-icon="watch"]::before { content: "◉"; }
 i[data-icon="diamond"]::before { content: "◇"; }
 i[data-icon="id"]::before { content: "▣"; }
-i[data-icon="vape"]::before { content: "▥"; }
 i[data-icon="music"]::before { content: "♪"; }
 i[data-icon="battery"]::before { content: "▰"; }
 i[data-icon="more"]::before { content: "…"; }
@@ -576,7 +575,7 @@ h2 span, h1 span { color: var(--gold); }
 .repairs { background: #07090c; padding-top: 0; }
 .repair-hero { min-height: 290px; display: grid; align-items: center; border-top: 1px solid rgba(212,166,74,.14); border-bottom: 1px solid rgba(212,166,74,.2); background: linear-gradient(90deg, #07090c 0 50%, transparent 50%), radial-gradient(circle at 55% 50%, rgba(212,166,74,.12), transparent 28rem); }
 .repair-hero-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px; align-items: center; }
-.repair-photo { height: 290px; background: linear-gradient(90deg, rgba(7,9,12,0), rgba(7,9,12,.2)), url('assets/photos/phone-repair-showcase.jpg') center/cover; clip-path: polygon(12% 0,100% 0,100% 100%,0 100%); filter: grayscale(.75) brightness(.72); border-left: 2px solid var(--gold-deep); }
+.repair-photo { height: 290px; background: linear-gradient(135deg, #102a56, #081426); clip-path: polygon(12% 0,100% 0,100% 100%,0 100%); border-left: 2px solid var(--gold-deep); }
 .repair-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(360px, .72fr); gap: 60px; margin-top: 34px; align-items: start; }
 .block-heading { margin: 0 0 20px; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; }
 .repair-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
@@ -1321,7 +1320,7 @@ i[data-icon] svg {
   .category-card img { height: 210px; }
 }
 
-/* Step 6: final polish — new watch/jewellery/vape visuals + balanced icon system */
+/* Step 6: final polish — watch, jewellery and balanced icon system */
 .service-cards,
 .category-grid,
 .jewellery-services {
@@ -1452,17 +1451,6 @@ i[data-icon] svg {
 .category-card:hover img,
 .jewellery-service:hover img {
   filter: saturate(1.12) contrast(1.08) brightness(.92);
-}
-
-/* Give the generated premium product shots a cleaner cinematic crop */
-img[src*="watches-showcase"],
-img[src*="watch-batteries-showcase"],
-img[src*="watch-straps-showcase"],
-img[src*="bracelet-adjustment-showcase"],
-img[src*="clasp-repair-showcase"],
-img[src*="jewellery-polish-showcase"],
-img[src*="vapes-accessories-showcase"] {
-  object-position: center;
 }
 
 @media (max-width: 900px) {
@@ -1696,17 +1684,6 @@ i[data-icon] svg g {
   margin-right: 0 !important;
   margin-top: 3px;
   flex: 0 0 auto;
-}
-
-/* More premium crops for newly added generated imagery. */
-img[src*="mobile-accessories-showcase"],
-img[src*="passport-photos-showcase"] {
-  object-position: center;
-  filter: saturate(1.06) contrast(1.05) brightness(.82);
-}
-
-.service-card img[src*="passport-photos-showcase"] {
-  object-position: center 52%;
 }
 
 /* Slightly cleaner service cards and category cards. */
@@ -2138,18 +2115,6 @@ i[data-icon="whatsapp"] svg { stroke-width: 2.25; }
 .nav-button:hover {
   background: rgba(212, 166, 74, .14);
   border-color: rgba(244, 217, 129, 1);
-}
-
-/* New generated visuals for mobile accessories and passport photos */
-.image-teaser img[src*="mobile-accessories-showcase"],
-.service-card img[src*="mobile-accessories-showcase"],
-.accessory-wall img[src*="mobile-accessories-showcase"] {
-  object-position: center;
-  filter: saturate(1.08) contrast(1.08) brightness(.76);
-}
-.service-card img[src*="passport-photos-showcase"] {
-  object-position: center 48%;
-  filter: saturate(1.02) contrast(1.06) brightness(.78);
 }
 
 /* Service cards: stop tall cards looking too empty on narrow screens */
