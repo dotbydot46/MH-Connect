@@ -1,17 +1,17 @@
 # MH Connect enquiry automation
 
-The website already creates a unique reference and opens a structured WhatsApp message. The next connection can also add the same enquiry to a private Google Sheet without asking the customer to complete a second form.
+The website creates a unique reference, adds the enquiry to the private MH Connect lead Sheet and opens a structured WhatsApp message without asking the customer to complete a second form.
 
 ## Recommended flow
 
 1. A customer completes a short service form.
 2. The website creates an `MHC-YYYYMMDD-XXXXXX` reference.
 3. WhatsApp opens with the service details and reference.
-4. When the private endpoint is connected, a matching draft lead is added to the `Website Leads` sheet.
+4. A matching draft lead is added to the `Website Leads` sheet.
 5. Staff update the lead through `New → Quoted → Booked → In progress → Ready → Collected → Review requested`.
 6. A daily email lists active enquiries that still need attention.
 
-## Connect the private Google Sheet
+## Reconnect or replace the private Google Sheet
 
 1. Create a private Google Sheet for MH Connect leads.
 2. Open **Extensions → Apps Script** from that Sheet.
@@ -19,11 +19,11 @@ The website already creates a unique reference and opens a structured WhatsApp m
 4. Leave `SPREADSHEET_ID` unchanged. The setup function securely records the bound Sheet ID for the web app.
 5. Run `setupLeadSheet` once and approve the requested permissions.
 6. Use **Deploy → New deployment → Web app**. Run as the owner and choose the narrowest access setting that still accepts public website submissions.
-7. Copy the Web app URL into `LEAD_CAPTURE_ENDPOINT` near the top of `script.js`.
+7. If the deployment URL changes, replace `LEAD_CAPTURE_ENDPOINT` near the top of `script.js`.
 8. Submit one test enquiry and confirm the website reference matches the new Sheet row.
 9. Run `createDailyDigestTrigger` only if the 9 AM follow-up email is wanted.
 
-If MH Connect later moves to a custom domain, update `ALLOWED_PAGE_PREFIX` in the Apps Script. Before switching lead capture on publicly, also update the privacy notice to name the private Google Sheet storage and the retention period MH Connect has chosen.
+If MH Connect later moves to a custom domain, update `ALLOWED_PAGE_PREFIX` in the Apps Script and keep the privacy notice aligned with how enquiry records are stored and retained.
 
 ## Data and safety rules
 

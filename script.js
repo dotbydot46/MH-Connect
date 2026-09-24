@@ -59,9 +59,8 @@ renderPremiumIcons();
 const WHATSAPP_NUMBER = "447337323727";
 const SHOP_PHONE_DISPLAY = "07337 323727";
 
-// Paste the private lead-capture web-app URL here when the automation is connected.
-// The website continues to work normally while this is blank.
-const LEAD_CAPTURE_ENDPOINT = "";
+// Private Google Apps Script endpoint for the MH Connect lead tracker.
+const LEAD_CAPTURE_ENDPOINT = "https://script.google.com/macros/s/AKfycbwMKv28QJQCA-6jUWLcPS73Apn-LGvD1Eob5TTqXtqPVy3i2tgDwWAb_9n2Ol0aWH1w/exec";
 
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");

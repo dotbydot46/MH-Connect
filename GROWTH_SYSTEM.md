@@ -92,9 +92,9 @@ The website is designed around one simple loop:
 - Repeat customers
 - Jobs waiting for collection and unpaid balances
 
-## Automation foundation
+## Lead automation
 
-The form system is ready to send a matching draft lead to a private Google Sheet when `LEAD_CAPTURE_ENDPOINT` is connected in `script.js`. The prepared Apps Script, lead stages, duplicate-reference check and daily follow-up digest are documented in `AUTOMATION_SETUP.md`.
+The form system sends a matching draft lead to the private Google Sheet configured through `LEAD_CAPTURE_ENDPOINT` in `script.js`. The Apps Script, lead stages, duplicate-reference check and optional daily follow-up digest are documented in `AUTOMATION_SETUP.md`.
 
 Keep customer data out of public website code and never put Sheet credentials or private customer records in this GitHub Pages repository.
 
