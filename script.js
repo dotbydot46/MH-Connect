@@ -247,15 +247,6 @@ whatsappForms.forEach((form) => {
     lines.push("", "Please confirm the likely price, availability and next step. I can send photos if that helps.");
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
-    try {
-      localStorage.setItem("mh_connect_last_enquiry", JSON.stringify({
-        reference,
-        type: title,
-        createdAt: new Date().toISOString()
-      }));
-    } catch (_) {
-      // The enquiry still works when browser storage is unavailable.
-    }
     captureEnquiryRecord({
       reference,
       createdAt: new Date().toISOString(),
