@@ -13,7 +13,7 @@
 const CONFIG = Object.freeze({
   SPREADSHEET_ID: "PASTE_PRIVATE_SHEET_ID_HERE",
   SHEET_NAME: "Website Leads",
-  OWNER_EMAIL: "mhconnect.uk2026@gmail.com",
+  OWNER_EMAIL: "info@mhconnect.uk",
   ALLOWED_PAGE_PREFIX: "/MH-Connect/"
 });
 
