@@ -29,9 +29,10 @@ The website is designed around one simple loop:
    - `review.html` is a simple page to send after a successful repair, sale or service.
    - Customers with a concern are routed to support before being asked to review.
 
-5. **Measurement-ready actions**
-   - The website records events in `dataLayer` for WhatsApp, phone, email, directions, form-generated enquiries and review clicks.
-   - A future Google Analytics setup can use these existing events without rebuilding the customer journey.
+5. **Consent-aware measurement**
+   - Google Analytics 4 uses measurement ID `G-GKG8YE4YRN` only after a visitor allows analytics.
+   - The website measures WhatsApp, phone, email, directions, form-generated leads and review clicks without sending form content, contact details or enquiry references to Analytics.
+   - Advertising signals are disabled, and visitors can change their analytics choice from the website footer.
 
 6. **Truth and compliance rules**
    - Use only the approved storefront and shop-interior photographs. Service pages use clear text and a consistent icon system rather than generated product scenes.

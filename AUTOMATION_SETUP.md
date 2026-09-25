@@ -36,4 +36,4 @@ The deployed collector validates the original `/MH-Connect/` source prefix. `get
 
 ## Measurement connection
 
-The site already emits privacy-conscious events for WhatsApp, calls, email, directions and generated enquiries through `dataLayer`. Analytics should be connected only after choosing the consent approach and updating the privacy notice if required.
+Google Analytics 4 is connected through measurement ID `G-GKG8YE4YRN`. It loads only after the visitor allows analytics and records privacy-conscious events for WhatsApp, calls, email, directions and generated leads. Form content, contact details and enquiry references are not sent to Analytics. The privacy notice and footer privacy control explain and manage this choice.

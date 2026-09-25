@@ -56,6 +56,136 @@ function renderPremiumIcons() {
 }
 renderPremiumIcons();
 
+const GA_MEASUREMENT_ID = "G-GKG8YE4YRN";
+const ANALYTICS_CONSENT_KEY = "mh_analytics_consent";
+
+function getAnalyticsPreference() {
+  try {
+    const preference = window.localStorage.getItem(ANALYTICS_CONSENT_KEY);
+    return preference === "granted" || preference === "denied" ? preference : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveAnalyticsPreference(preference) {
+  try {
+    window.localStorage.setItem(ANALYTICS_CONSENT_KEY, preference);
+  } catch {
+    // The choice still applies to the current page if browser storage is unavailable.
+  }
+}
+
+function loadGoogleAnalytics() {
+  if (window.__mhAnalyticsLoaded) return;
+  window.__mhAnalyticsLoaded = true;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag("consent", "default", {
+    analytics_storage: "granted",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied"
+  });
+  window.gtag("js", new Date());
+  window.gtag("config", GA_MEASUREMENT_ID, {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`;
+  document.head.append(script);
+}
+
+function clearAnalyticsCookies() {
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.split("=")[0].trim();
+    if (!name.startsWith("_ga")) return;
+    document.cookie = `${name}=; Max-Age=0; path=/`;
+    document.cookie = `${name}=; Max-Age=0; path=/; domain=${window.location.hostname}`;
+    document.cookie = `${name}=; Max-Age=0; path=/; domain=.${window.location.hostname}`;
+  });
+}
+
+function createAnalyticsConsentBanner() {
+  let banner = document.querySelector("[data-analytics-consent]");
+  if (banner) return banner;
+
+  banner = document.createElement("section");
+  banner.className = "analytics-consent";
+  banner.dataset.analyticsConsent = "";
+  banner.hidden = true;
+  banner.setAttribute("role", "dialog");
+  banner.setAttribute("aria-modal", "false");
+  banner.setAttribute("aria-labelledby", "analytics-consent-title");
+  banner.setAttribute("aria-describedby", "analytics-consent-description");
+  banner.innerHTML = `
+    <div class="analytics-consent__copy">
+      <p class="eyebrow">Privacy choice</p>
+      <h2 id="analytics-consent-title">Help us improve the website</h2>
+      <p id="analytics-consent-description">With your permission, Google Analytics helps us understand visits and which contact options people use. We do not use it for personalised advertising.</p>
+    </div>
+    <div class="analytics-consent__actions">
+      <button class="btn btn-gold" type="button" data-analytics-accept>Allow analytics</button>
+      <button class="btn btn-outline" type="button" data-analytics-decline>Decline analytics</button>
+      <a href="privacy.html#analytics">Read privacy notice</a>
+    </div>`;
+  document.body.append(banner);
+
+  banner.querySelector("[data-analytics-accept]").addEventListener("click", () => {
+    saveAnalyticsPreference("granted");
+    loadGoogleAnalytics();
+    banner.hidden = true;
+  });
+
+  banner.querySelector("[data-analytics-decline]").addEventListener("click", () => {
+    saveAnalyticsPreference("denied");
+    if (typeof window.gtag === "function") {
+      window.gtag("consent", "update", { analytics_storage: "denied" });
+    }
+    clearAnalyticsCookies();
+    banner.hidden = true;
+  });
+
+  return banner;
+}
+
+function showAnalyticsConsentBanner() {
+  const banner = createAnalyticsConsentBanner();
+  banner.hidden = false;
+  banner.querySelector("[data-analytics-accept]")?.focus({ preventScroll: true });
+}
+
+function addAnalyticsSettingsControl() {
+  const footerBottom = document.querySelector(".footer-bottom");
+  if (!footerBottom || footerBottom.querySelector("[data-analytics-settings]")) return;
+
+  const button = document.createElement("button");
+  button.className = "analytics-settings-button";
+  button.type = "button";
+  button.dataset.analyticsSettings = "";
+  button.textContent = "Privacy choices";
+  footerBottom.append(button);
+}
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest("[data-analytics-settings]")) return;
+  event.preventDefault();
+  showAnalyticsConsentBanner();
+});
+
+addAnalyticsSettingsControl();
+if (getAnalyticsPreference() === "granted") {
+  loadGoogleAnalytics();
+} else if (getAnalyticsPreference() === null) {
+  showAnalyticsConsentBanner();
+}
+
 const WHATSAPP_NUMBER = "447337323727";
 const SHOP_PHONE_DISPLAY = "07337 323727";
 
@@ -260,7 +390,7 @@ whatsappForms.forEach((form) => {
       details
     });
     showEnquiryStatus(form, reference);
-    mhTrack("generate_enquiry", { enquiry_type: title, enquiry_reference: reference });
+    mhTrack("generate_lead", { enquiry_type: title });
     window.open(url, "_blank", "noopener");
   });
 });
@@ -317,18 +447,15 @@ if ("IntersectionObserver" in window) {
 
 // MH Connect launch-ready utilities: contact tracking, open status and lazy map.
 function mhTrack(eventName, params = {}) {
+  if (getAnalyticsPreference() !== "granted" || typeof window.gtag !== "function") return;
+
   const payload = {
     event_category: "mh_connect",
     page_path: window.location.pathname,
     ...params
   };
 
-  if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, payload);
-  }
-
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: eventName, ...payload });
+  window.gtag("event", eventName, payload);
 }
 
 document.addEventListener("click", (event) => {
