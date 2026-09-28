@@ -9,7 +9,7 @@
   "theme_color": "#071426",
   "icons": [
     {
-      "src": "assets/photos/mh-emblem-160.png",
+      "src": "assets/photos/mh-connect-logo-160.png",
       "sizes": "160x160",
       "type": "image/png",
       "purpose": "any maskable"
