@@ -1403,6 +1403,16 @@ button.next-card {
   font-weight: 700;
 }
 
+.form-status[data-state="error"] {
+  background: #fceeed;
+  color: var(--danger);
+}
+
+.form-status[data-state="pending"] {
+  background: var(--surface-blue);
+  color: var(--ink);
+}
+
 .repair-mini-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
