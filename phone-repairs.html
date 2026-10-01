@@ -260,10 +260,12 @@
           </div>
         </div>
 
-        <form class="enquiry-panel reveal delay-1" id="repair-form" data-whatsapp-form data-form-title="Phone repair enquiry">
+        <form class="enquiry-panel reveal delay-1" id="repair-form" data-repair-form data-form-title="Phone repair enquiry">
           <h3>Send a Repair Enquiry</h3>
-          <p>Add the details once. We create an enquiry reference and open a ready-to-send WhatsApp message.</p>
+          <p>Tell us your model and issue. We’ll receive your enquiry and contact you about the next step.</p>
           <label>Your Name*<input type="text" name="name" placeholder="Enter your name" autocomplete="name" required></label>
+          <label>Phone Number*<input type="tel" name="phone" placeholder="Enter your phone number" autocomplete="tel" required></label>
+          <label>Email (optional)<input type="email" name="email" placeholder="Enter your email address" autocomplete="email"></label>
           <label>Phone Model*<input type="text" name="model" placeholder="e.g. iPhone 13 Pro, Samsung S22" required></label>
           <label>Repair issue<select name="issue" required>
             <option value="Screen replacement enquiry">Screen replacement enquiry</option>
@@ -276,8 +278,9 @@
           <label>What matters most?<select name="preference"><option value="Please recommend the best value option">Please recommend the best value option</option><option value="Lowest suitable cost">Lowest suitable cost</option><option value="Better quality / premium option">Better quality / premium option</option><option value="Closest available quality to original">Closest available quality to original</option></select></label>
           <label>What issue are you facing?*<textarea name="message" rows="5" placeholder="e.g. Cracked screen, battery draining, not charging, no sound, etc." required></textarea></label>
           <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="btn btn-gold full" type="submit"><i data-icon="whatsapp"></i>Send Enquiry on WhatsApp</button>
-          <small><i data-icon="lock"></i>Submitting creates a private MH Connect enquiry record and opens WhatsApp. <a href="privacy.html">Privacy notice</a>.</small>
+          <button class="btn btn-gold full" type="submit"><i data-icon="mail"></i>Send Repair Enquiry</button>
+          <p class="form-status" data-repair-status role="status" aria-live="polite" aria-atomic="true" hidden></p>
+          <small><i data-icon="lock"></i>Your details are sent to MH Connect to respond to your repair enquiry. <a href="privacy.html">Privacy notice</a>.</small>
         </form>
       </div>
     </section>
