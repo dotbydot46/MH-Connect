@@ -191,6 +191,7 @@ const SHOP_PHONE_DISPLAY = "07337 323727";
 
 // Private Google Apps Script endpoint for the MH Connect lead tracker.
 const LEAD_CAPTURE_ENDPOINT = "https://script.google.com/macros/s/AKfycbwMKv28QJQCA-6jUWLcPS73Apn-LGvD1Eob5TTqXtqPVy3i2tgDwWAb_9n2Ol0aWH1w/exec";
+const REPAIR_LEAD_ENDPOINT = "https://mhconnect.app.n8n.cloud/webhook/repair-lead-capture";
 
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
@@ -352,6 +353,68 @@ function getLeadSourcePage() {
   if (path === "/" || path.startsWith("/MH-Connect/")) return path;
   return `/MH-Connect${path.startsWith("/") ? path : `/${path}`}`;
 }
+
+// Repair enquiries use a confirmed n8n response rather than the WhatsApp flow.
+document.querySelectorAll("[data-repair-form]").forEach((form) => {
+  const button = form.querySelector('button[type="submit"]');
+  const status = form.querySelector("[data-repair-status]");
+  let submitting = false;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (submitting || !form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const value = (key) => String(data.get(key) || "").trim();
+    if (value("website")) return;
+    if (!value("name") || !value("phone") || !value("model") || !value("message")) {
+      status.hidden = false;
+      status.dataset.state = "error";
+      status.textContent = "Please enter your name, phone number, phone model and repair details.";
+      return;
+    }
+
+    // URL-encoded fields are parsed into n8n's body without a CORS preflight.
+    const payload = new URLSearchParams({
+      customer_name: value("name"),
+      phone_number: value("phone"),
+      email: value("email"),
+      device_model: value("model"),
+      repair_issue: value("issue"),
+      message: `${value("message")}\n\nRepair preference: ${value("preference")}`,
+      source: "website"
+    });
+    submitting = true;
+    button.disabled = true;
+    form.setAttribute("aria-busy", "true");
+    status.hidden = false;
+    status.dataset.state = "pending";
+    status.textContent = "Sending your repair enquiry…";
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+
+    try {
+      const response = await fetch(REPAIR_LEAD_ENDPOINT, {
+        method: "POST",
+        body: payload,
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error(`Repair submission failed: ${response.status}`);
+      status.dataset.state = "success";
+      status.textContent = "Thank you — your repair enquiry has been sent. MH Connect will contact you about the next step.";
+      form.reset();
+      mhTrack("generate_lead", { enquiry_type: "Phone repair enquiry" });
+    } catch {
+      status.dataset.state = "error";
+      status.textContent = "We couldn’t confirm your enquiry was sent. Your details are still here. Please try again, or call 07337 323727 or contact us on WhatsApp.";
+    } finally {
+      clearTimeout(timeout);
+      submitting = false;
+      button.disabled = false;
+      form.removeAttribute("aria-busy");
+    }
+  });
+});
 
 whatsappForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
