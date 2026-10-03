@@ -419,6 +419,7 @@ document.querySelectorAll("[data-repair-form]").forEach((form) => {
 whatsappForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (!form.reportValidity()) return;
 
     const formData = new FormData(form);
     if (String(formData.get("website") || "").trim()) return;
@@ -453,7 +454,12 @@ whatsappForms.forEach((form) => {
       details
     });
     showEnquiryStatus(form, reference);
-    mhTrack("generate_lead", { enquiry_type: title });
+    // A prepared WhatsApp message is a contact handoff, not a confirmed lead.
+    mhTrack("click_whatsapp", {
+      enquiry_type: title,
+      form_id: form.id,
+      contact_method: "whatsapp_form"
+    });
     window.open(url, "_blank", "noopener");
   });
 });
@@ -529,12 +535,11 @@ document.addEventListener("click", (event) => {
   const location = link.dataset.location || link.closest("section")?.id || "site";
   let eventName = link.dataset.track || "";
 
-  if (!eventName) {
-    if (href.startsWith("tel:")) eventName = "click_phone";
-    else if (href.startsWith("mailto:")) eventName = "click_email";
-    else if (href.includes("wa.me/")) eventName = "click_whatsapp";
-    else if (href.includes("google.com/maps")) eventName = "click_directions";
-  }
+  // Contact destinations take precedence over legacy data-track aliases.
+  if (/^tel:/i.test(href)) eventName = "click_phone";
+  else if (/^mailto:/i.test(href)) eventName = "click_email";
+  else if (/^https?:\/\/(?:wa\.me|api\.whatsapp\.com)\//i.test(href)) eventName = "click_whatsapp";
+  else if (!eventName && href.includes("google.com/maps")) eventName = "click_directions";
 
   if (eventName) {
     mhTrack(eventName, {
