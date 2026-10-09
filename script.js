@@ -38,6 +38,7 @@ const iconPaths = {
   earbuds: '<path d="M7 14a4 4 0 0 1-4-4V8a4 4 0 0 1 8 0v2a4 4 0 0 1-4 4Z"/><path d="M17 14a4 4 0 0 1-4-4V8a4 4 0 0 1 8 0v2a4 4 0 0 1-4 4Z"/><path d="M7 14v7"/><path d="M17 14v7"/><path d="M5 21h4"/><path d="M15 21h4"/>',
   instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/>',
   facebook: '<path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1Z"/>',
+  tiktok: '<path d="M14 3v12a5 5 0 1 1-5-5v4a1 1 0 1 0 1 1V3h4Z"/><path d="M14 3c0 3 2 5 6 5v4c-2.3 0-4.3-.7-6-2"/>',
   powerbank: '<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h3"/><path d="M8 15h8"/><path d="M16 11l-2 3h3l-2 3"/>',
   print: '<path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/>',
   copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',

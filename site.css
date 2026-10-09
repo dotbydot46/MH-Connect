@@ -2207,6 +2207,7 @@ nav[aria-label="Footer services"] {
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 9px;
   margin-top: 23px;
 }
