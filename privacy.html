@@ -20,108 +20,216 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Store",
-  "@id": "https://mhconnect.uk/#mhconnect",
-  "name": "MH Connect",
-  "url": "https://mhconnect.uk/",
-  "image": "https://mhconnect.uk/assets/photos/shop-front.webp",
-  "logo": "https://mhconnect.uk/assets/photos/mh-connect-logo.png",
-  "telephone": "+447337323727",
-  "email": "info@mhconnect.uk",
-  "priceRange": "£",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "59 Lower Addiscombe Road",
-    "addressLocality": "Croydon",
-    "postalCode": "CR0 6PQ",
-    "addressCountry": "GB"
-  },
-  "areaServed": [
-    "Addiscombe",
-    "Lower Addiscombe",
-    "East Croydon",
-    "Central Croydon",
-    "Croydon",
-    "Shirley",
-    "Selhurst",
-    "Woodside",
-    "South Norwood",
-    "South London"
-  ],
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "09:00",
-      "closes": "19:30"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "10:00",
-      "closes": "18:00"
-    }
-  ],
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "@id": "https://mhconnect.uk/#mhconnect",
+      "name": "MH Connect",
+      "url": "https://mhconnect.uk/",
+      "image": "https://mhconnect.uk/assets/photos/shop-front.webp",
+      "logo": "https://mhconnect.uk/assets/photos/mh-connect-logo.png",
       "telephone": "+447337323727",
       "email": "info@mhconnect.uk",
-      "areaServed": "GB",
-      "availableLanguage": [
-        "en-GB"
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "59 Lower Addiscombe Road",
+        "addressLocality": "Croydon",
+        "addressRegion": "Greater London",
+        "postalCode": "CR0 6PQ",
+        "addressCountry": "GB"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "19:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+447337323727",
+          "email": "info@mhconnect.uk",
+          "areaServed": "GB",
+          "availableLanguage": [
+            "en-GB"
+          ]
+        }
+      ],
+      "sameAs": [
+        "https://maps.google.com/maps?cid=14965347736837919877"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "MH Connect shop services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/phone-repairs.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/phone-repairs.html#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/printing.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/printing.html#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/accessories.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/accessories.html#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/watches-jewellery.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/watches-jewellery.html#service"
+            }
+          }
+        ]
+      },
+      "description": "Phone repairs, accessories, printing, watch battery replacement and jewellery care at 59 Lower Addiscombe Road, Addiscombe, Croydon."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mhconnect.uk/#website",
+      "url": "https://mhconnect.uk/",
+      "name": "MH Connect",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mhconnect.uk/privacy.html#webpage",
+      "url": "https://mhconnect.uk/privacy.html",
+      "name": "Privacy Notice | MH Connect",
+      "description": "Privacy notice for MH Connect website enquiries, communications and optional website analytics.",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://mhconnect.uk/#website"
+      },
+      "about": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/phone-repairs.html#service",
+      "name": "Phone repairs",
+      "url": "https://mhconnect.uk/phone-repairs.html",
+      "serviceType": [
+        "Phone screen replacement",
+        "Phone battery replacement",
+        "Charging port repair",
+        "Phone diagnostics"
+      ],
+      "description": "Screen, battery and charging port repair enquiries, subject to model, parts and inspection.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/printing.html#service",
+      "name": "Printing and document services",
+      "url": "https://mhconnect.uk/printing.html",
+      "serviceType": [
+        "Printing",
+        "Photocopying",
+        "Scanning",
+        "Laminating",
+        "Photo printing",
+        "Passport and ID photos"
+      ],
+      "description": "Printing, photocopying, scanning and laminating with collection at the Croydon shop.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/accessories.html#service",
+      "name": "Phone accessories",
+      "url": "https://mhconnect.uk/accessories.html",
+      "serviceType": [
+        "Phone cases",
+        "Screen protectors",
+        "Chargers and cables",
+        "Power banks",
+        "Audio accessories"
+      ],
+      "description": "Phone accessories with model compatibility and current stock checked before purchase.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/watches-jewellery.html#service",
+      "name": "Watch batteries and jewellery care",
+      "url": "https://mhconnect.uk/watches-jewellery.html",
+      "serviceType": [
+        "Watch battery replacement",
+        "Watch straps",
+        "Bracelet adjustment",
+        "Jewellery cleaning",
+        "Jewellery polishing",
+        "Clasp checks"
+      ],
+      "description": "Watch battery replacement, straps, bracelet adjustment and jewellery care, subject to suitability.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
       ]
     }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "MH Connect services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Phone repairs"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Mobile accessories"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Printing and document services"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Watch batteries and straps"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Jewellery care"
-        }
-      }
-    ]
-  }
+  ]
 }
 </script>
 </head>
@@ -138,7 +246,7 @@
     </div>
 
     <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand brand-premium" href="index.html" aria-label="MH Connect home">
+      <a class="brand brand-premium" href="/" aria-label="MH Connect home">
         <span class="brand-mark" aria-hidden="true"><img src="assets/photos/mh-connect-logo-160.png" alt="" width="160" height="160" /></span>
         <span class="brand-copy"><strong>MH Connect</strong><small>Your Local Tech &amp; Lifestyle Store</small></span>
       </a>
@@ -146,7 +254,7 @@
         <span class="sr-only">Open menu</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
       <div class="nav-links" id="nav-links" data-nav-links>
-        <a class="" href="index.html">Home</a>
+        <a class="" href="/">Home</a>
         <a class="" href="phone-repairs.html">Repairs</a>
         <a class="" href="accessories.html">Accessories</a>
         <a class="" href="printing.html">Printing</a>
@@ -166,7 +274,7 @@
           <p class="hero-text">This notice explains how MH Connect uses information you send through WhatsApp, email, phone calls and website enquiry forms.</p>
           <div class="hero-actions compact">
             <a class="btn btn-gold" href="contact.html"><i data-icon="mail"></i>Contact Us</a>
-            <a class="btn btn-outline" href="index.html"><i data-icon="store"></i>Back Home</a>
+            <a class="btn btn-outline" href="/"><i data-icon="store"></i>Back Home</a>
           </div>
         </div>
         <aside class="service-hero-panel reveal delay-1" aria-label="Privacy summary">
@@ -246,7 +354,7 @@
       </section>
       <nav class="footer-column footer-links" aria-label="Footer quick links">
         <h3>Quick Links</h3>
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <a href="phone-repairs.html">Phone Repairs</a>
         <a href="accessories.html">Accessories</a>
         <a href="printing.html">Printing</a>

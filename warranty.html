@@ -17,15 +17,220 @@
   <link rel="stylesheet" href="site.css" />
   <link rel="canonical" href="https://mhconnect.uk/warranty.html" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Warranty & Aftercare | MH Connect",
-    "url": "https://mhconnect.uk/warranty.html",
-    "isPartOf": { "@id": "https://mhconnect.uk/#mhconnect" },
-    "about": { "@id": "https://mhconnect.uk/#mhconnect" }
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "@id": "https://mhconnect.uk/#mhconnect",
+      "name": "MH Connect",
+      "url": "https://mhconnect.uk/",
+      "image": "https://mhconnect.uk/assets/photos/shop-front.webp",
+      "logo": "https://mhconnect.uk/assets/photos/mh-connect-logo.png",
+      "telephone": "+447337323727",
+      "email": "info@mhconnect.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "59 Lower Addiscombe Road",
+        "addressLocality": "Croydon",
+        "addressRegion": "Greater London",
+        "postalCode": "CR0 6PQ",
+        "addressCountry": "GB"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "19:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+447337323727",
+          "email": "info@mhconnect.uk",
+          "areaServed": "GB",
+          "availableLanguage": [
+            "en-GB"
+          ]
+        }
+      ],
+      "sameAs": [
+        "https://maps.google.com/maps?cid=14965347736837919877"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "MH Connect shop services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/phone-repairs.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/phone-repairs.html#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/printing.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/printing.html#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/accessories.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/accessories.html#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://mhconnect.uk/watches-jewellery.html",
+            "itemOffered": {
+              "@id": "https://mhconnect.uk/watches-jewellery.html#service"
+            }
+          }
+        ]
+      },
+      "description": "Phone repairs, accessories, printing, watch battery replacement and jewellery care at 59 Lower Addiscombe Road, Addiscombe, Croydon."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mhconnect.uk/#website",
+      "url": "https://mhconnect.uk/",
+      "name": "MH Connect",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mhconnect.uk/warranty.html#webpage",
+      "url": "https://mhconnect.uk/warranty.html",
+      "name": "Warranty & Aftercare | MH Connect Croydon",
+      "description": "Understand MH Connect repair and product warranty cover, exclusions and aftercare, or send a warranty check request.",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://mhconnect.uk/#website"
+      },
+      "about": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/phone-repairs.html#service",
+      "name": "Phone repairs",
+      "url": "https://mhconnect.uk/phone-repairs.html",
+      "serviceType": [
+        "Phone screen replacement",
+        "Phone battery replacement",
+        "Charging port repair",
+        "Phone diagnostics"
+      ],
+      "description": "Screen, battery and charging port repair enquiries, subject to model, parts and inspection.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/printing.html#service",
+      "name": "Printing and document services",
+      "url": "https://mhconnect.uk/printing.html",
+      "serviceType": [
+        "Printing",
+        "Photocopying",
+        "Scanning",
+        "Laminating",
+        "Photo printing",
+        "Passport and ID photos"
+      ],
+      "description": "Printing, photocopying, scanning and laminating with collection at the Croydon shop.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/accessories.html#service",
+      "name": "Phone accessories",
+      "url": "https://mhconnect.uk/accessories.html",
+      "serviceType": [
+        "Phone cases",
+        "Screen protectors",
+        "Chargers and cables",
+        "Power banks",
+        "Audio accessories"
+      ],
+      "description": "Phone accessories with model compatibility and current stock checked before purchase.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mhconnect.uk/watches-jewellery.html#service",
+      "name": "Watch batteries and jewellery care",
+      "url": "https://mhconnect.uk/watches-jewellery.html",
+      "serviceType": [
+        "Watch battery replacement",
+        "Watch straps",
+        "Bracelet adjustment",
+        "Jewellery cleaning",
+        "Jewellery polishing",
+        "Clasp checks"
+      ],
+      "description": "Watch battery replacement, straps, bracelet adjustment and jewellery care, subject to suitability.",
+      "provider": {
+        "@id": "https://mhconnect.uk/#mhconnect"
+      },
+      "areaServed": [
+        "Croydon",
+        "Addiscombe",
+        "East Croydon"
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body data-automation-ready="mh-connect-warranty">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -39,7 +244,7 @@
       </div>
     </div>
     <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand brand-premium" href="index.html" aria-label="MH Connect home">
+      <a class="brand brand-premium" href="/" aria-label="MH Connect home">
         <span class="brand-mark" aria-hidden="true"><img src="assets/photos/mh-connect-logo-160.png" alt="" width="160" height="160" /></span>
         <span class="brand-copy"><strong>MH Connect</strong><small>Your Local Tech &amp; Lifestyle Store</small></span>
       </a>
@@ -47,7 +252,7 @@
         <span class="sr-only">Open menu</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
       <div class="nav-links" id="nav-links" data-nav-links>
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <a href="phone-repairs.html">Repairs</a>
         <a href="accessories.html">Accessories</a>
         <a href="printing.html">Printing</a>
@@ -166,7 +371,7 @@
         <div class="footer-logo-row"><span class="brand-mark footer-mark" aria-hidden="true"><img src="assets/photos/mh-connect-logo-160.png" alt="" loading="lazy" width="160" height="160" /></span><div><h2>MH Connect</h2><p class="footer-tagline">Phone repairs, accessories, printing, watches, jewellery care and everyday tech help in Croydon.</p></div></div>
         <div class="socials socials-clean" aria-label="Quick contact links"><a href="https://wa.me/447337323727" target="_blank" rel="noopener" aria-label="WhatsApp MH Connect"><i data-icon="whatsapp"></i></a><a href="tel:+447337323727" aria-label="Call MH Connect"><i data-icon="phone"></i></a><a href="mailto:info@mhconnect.uk" aria-label="Email MH Connect"><i data-icon="mail"></i></a></div>
       </section>
-      <nav class="footer-column footer-links" aria-label="Footer quick links"><h3>Quick Links</h3><a href="index.html">Home</a><a href="phone-repairs.html">Phone Repairs</a><a href="printing.html">Printing</a><a href="warranty.html">Warranty &amp; Aftercare</a><a href="review.html">Leave a Review</a><a href="contact.html">Contact</a></nav>
+      <nav class="footer-column footer-links" aria-label="Footer quick links"><h3>Quick Links</h3><a href="/">Home</a><a href="phone-repairs.html">Phone Repairs</a><a href="printing.html">Printing</a><a href="warranty.html">Warranty &amp; Aftercare</a><a href="review.html">Leave a Review</a><a href="contact.html">Contact</a></nav>
       <nav class="footer-column footer-links" aria-label="Footer services"><h3>Our Services</h3><a href="phone-repairs.html">Phone Repairs</a><a href="accessories.html">Mobile Accessories</a><a href="printing.html">Printing &amp; Documents</a><a href="watches-jewellery.html">Watches &amp; Jewellery</a><a href="printing.html#passport-photos">Passport Photos</a>
       </nav>
       <section class="footer-column footer-contact" aria-label="Contact information"><h3>Contact Info</h3><div class="footer-contact-list"><p><i data-icon="pin"></i><span>59 Lower Addiscombe Road,<br />Croydon CR0 6PQ</span></p><p><i data-icon="clock"></i><span>Mon–Sat 9:00 AM – 7:30 PM<br />Sunday 10:00 AM – 6:00 PM</span></p><p><i data-icon="phone"></i><a href="tel:+447337323727">07337 323727</a></p><p><i data-icon="mail"></i><a href="mailto:info@mhconnect.uk">info@mhconnect.uk</a></p></div></section>
